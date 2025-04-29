@@ -48,7 +48,7 @@ const TalkToDOctor = () => {
         user.lastname.toLowerCase().includes(searchQuery.toLowerCase()))
   );
 
-  const onSearch: SearchProps["onSearch"] = (value, _e, info) => {
+  const onSearch: SearchProps["onSearch"] = (value, _e) => {
     setSearchQuery(value);
   };
 
@@ -78,30 +78,71 @@ const TalkToDOctor = () => {
               <div className="doctor-lists col-12 container d-flex align-item-center justify-center">
                 <div className="doctors row d-flex  align-item-center justify-center">
                   {filteredUsers?.map((user) => (
+                    // <DoctorsCard
+                    //   key={user?._id}
+                    //   name={`${user?.firstname} ${user?.lastname}`}
+                    //   photo={
+                    //     user?.image?.data
+                    //       ? `data:image/jpeg;base64,${btoa(
+                    //           user.image.data.reduce(
+                    //             (acc: string, byte: number) =>
+                    //               acc + String.fromCharCode(byte),
+                    //             ""
+                    //           )
+                    //         )}`
+                    //       : ""
+                    //   }
+                    //   scpeicialities={(user.categories ?? [])
+                    //     .map((catId: string) => {
+                    //       const category = categories.find(
+                    //         (category) => category._id === catId
+                    //       );
+                    //       return category
+                    //         ? category.categoryName.toLowerCase()
+                    //         : null;
+                    //     })
+                    //     .filter((name): name is string => name !== null)}
+                    //   languageSkills={
+                    //     Array.isArray(user?.languageSkills)
+                    //       ? user.languageSkills
+                    //           .map((lang: string) => lang)
+                    //           .join("\n")
+                    //           .toLowerCase()
+                    //       : ""
+                    //   }
+                    //   hospital={user?.currentWorkHospital}
+                    //   workExperience={user?.workExperience}
+                    //   id={user?._id}
+                    // />
                     <DoctorsCard
                       key={user?._id}
                       name={`${user?.firstname} ${user?.lastname}`}
-                      photo={`data:image/jpeg;base64,${btoa(
-                        user.image.data.reduce(
-                          (acc: string, byte: number) =>
-                            acc + String.fromCharCode(byte),
-                          ""
-                        )
-                      )}`}
-                      scpeicialities={user.categories
+                      photo={
+                        user?.image?.data
+                          ? `data:image/jpeg;base64,${btoa(
+                              user.image.data.reduce(
+                                (acc: string, byte: number) =>
+                                  acc + String.fromCharCode(byte),
+                                ""
+                              )
+                            )}`
+                          : ""
+                      }
+                      scpeicialities={(user.categories ?? [])
                         .map((catId: string) => {
                           const category = categories.find(
                             (category) => category._id === catId
                           );
-                          return category ? `${category.categoryName}` : null;
+                          return category
+                            ? category.categoryName.toLowerCase()
+                            : null;
                         })
-                        .filter((name: any) => name !== null)
-                        .join(", ")
-                        .toLowerCase()}
-                      languageSkills={user?.languageSkills
-                        .map((languages: string) => languages)
-                        .join("\n")
-                        .toLowerCase()}
+                        .filter((name): name is string => name !== null)}
+                      languageSkills={
+                        Array.isArray(user?.languageSkills)
+                          ? user.languageSkills
+                          : []
+                      }
                       hospital={user?.currentWorkHospital}
                       workExperience={user?.workExperience}
                       id={user?._id}

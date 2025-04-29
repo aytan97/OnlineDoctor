@@ -1,15 +1,14 @@
-
-import App from './App.tsx'
-import './App.css'
-import "./styles/index.scss"
-import 'wookiee-style-sass/dist/index.css'
-import React, { Suspense } from 'react'
-import ReactDOM from "react-dom/client"
-import { AuthProvider } from './shared/contexts/AuthContext.tsx'
-import { Provider } from 'react-redux'
-import store from './redux/store.ts'
-import { BrowserRouter } from 'react-router-dom'
-import LoadingSpinner from './shared/layout/ReactSpinner/index.tsx'
+import { Suspense } from "react";
+import ReactDOM from "react-dom/client";
+import { Provider } from "react-redux";
+import { BrowserRouter } from "react-router-dom";
+import "wookiee-style-sass/dist/index.css";
+import "./App.css";
+import App from "./App.tsx";
+import store from "./redux/store.ts";
+import { AuthProvider } from "./shared/contexts/AuthContext.tsx";
+import LoadingSpinner from "./shared/layout/ReactSpinner/index.tsx";
+import "./styles/index.scss";
 // import { SocketProvider } from './shared/contexts/SocketProvider.tsx'
 
 const root = ReactDOM.createRoot(
@@ -27,4 +26,4 @@ root.render(
       </BrowserRouter>
     </Suspense>
   </Provider>
-)
+);

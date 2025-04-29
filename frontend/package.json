@@ -54,6 +54,7 @@
   "devDependencies": {
     "@types/crypto-js": "^4.2.2",
     "@types/node": "^20.12.4",
+    "@types/qs": "^6.9.18",
     "@types/react": "^18.2.66",
     "@types/react-dom": "^18.2.22",
     "@types/react-router-dom": "^5.3.3",
@@ -66,7 +67,8 @@
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-react-refresh": "^0.4.6",
     "typescript": "^5.2.2",
-    "vite": "^5.2.0"
+    "vite": "^5.2.0",
+    "vite-plugin-checker": "^0.9.1"
   },
   "description": "This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.",
   "main": "index.js",

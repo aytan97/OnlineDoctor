@@ -1,24 +1,24 @@
-import { Helmet } from "react-helmet-async";
-import logoicon from "../../shared/media/images/logoicon.png";
-import { useAppDispatch, useAppSelector } from "../../redux/hooks";
+import Search, { SearchProps } from "antd/es/input/Search";
 import { useEffect, useState } from "react";
-import { fetchUsers } from "../../redux/features/auth/authSlice";
-import { fetchCategories } from "../../redux/features/categories/categorySlice";
-import LoadingSpinner from "../../shared/layout/ReactSpinner";
+import { Helmet } from "react-helmet-async";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { fetchUsers } from "../../redux/features/auth/authSlice";
 import { getMe } from "../../redux/features/auth/getMeSlice";
-import Search, { SearchProps } from "antd/es/input/Search";
-import BlogsCard from "./blogsCard";
 import { fetchPublishedBlogs } from "../../redux/features/blogs/blogSlice";
-import { formattedDate } from "../../shared/models";
+import { fetchCategories } from "../../redux/features/categories/categorySlice";
+import { useAppDispatch, useAppSelector } from "../../redux/hooks";
 import Footer from "../../shared/layout/Footer";
+import LoadingSpinner from "../../shared/layout/ReactSpinner";
+import logoicon from "../../shared/media/images/logoicon.png";
+import { formattedDate } from "../../shared/models";
+import BlogsCard from "./blogsCard";
+
 const Blogs = () => {
   const dispatch = useAppDispatch();
   const users = useAppSelector((state) => state.auth.list);
   const getme = useAppSelector((state) => state.getMe.user);
   const categories = useAppSelector((state) => state.categories.list);
-  const category = useAppSelector((state) => state.categories.selected);
   const blogs = useAppSelector((state) => state.blog.list);
   const [notificationShown, setNotificationShown] = useState(false);
   const [loading, setLoading] = useState(true);
