@@ -1,0 +1,57 @@
+### Create new Category
+
+POST http://localhost:5000/api/categories
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NWU1OWY5NWE0NjI5ZDZhZDFhOGQ3MjYiLCJpYXQiOjE3MDk1NDc0MTUsImV4cCI6MTcxMTI3NTQxNX0.CAeSg6MKCPlrnrbCuYPJ4akdnPxKcvqIHxLDtYVJGFc
+
+{
+   "categoryId": 1, 
+   "categoryName": "Beverage22s",      
+   "description": "Soft drinks, coffees, teas, beers, and ales" 
+},
+
+
+### Bulk Insert
+
+POST http://localhost:5000/categories/bulk-insert
+Content-Type: application/json
+
+{
+  "categories": [
+    { "categoryName": "Pediatrician", "departmentName":"Pediatrics", "description": "Pediatricians handle scheduled care and check-ins for infants, toddlers, younger children, adolescents, preteens, and most teenagers"},
+    { "categoryName": "Dermatologist", "departmentName":"Dermatology", "description": "Dermatologists are medical doctors who specialize in skin, hair and nails." },
+    { "categoryName": "Gastroenterologist", "departmentName":"Gastroenterology", "description": "A gastroenterologist is a specialist with expertise in the disorders and diseases that affect the digestive system"},
+    { "categoryName": "Psychiatrist", "departmentName":"Psychiatry", "description": "A psychiatrist is a medical doctor (an M.D. or D.O.) who specializes in mental health, including substance use disorders." },
+    { "categoryName": "General Physician", "departmentName":"General Medicine", "description": "General Physicians are highly trained specialists who provide a range of non-surgical health care to adult patients." },
+    { "categoryName": "Neurologist", "departmentName":"Neurology", "description": "A neurologist is a medical doctor who diagnoses, treats and manages disorders of the brain and nervous system" },
+    { "categoryName": "Pediatrics", "departmentName":"Pediatrics", "description": "A pediatrician is a medical doctor who sees to the needs of infants, children, adolescents, and young adults." },
+    { "categoryName": "Orthopedics", "departmentName":"Orthopedics", "description": "An orthopedic surgeon (orthopedist) is a medical specialist who focuses on injuries and diseases affecting your musculoskeletal system (bones, muscles, joints and soft tissues)." },
+    { "categoryName": "Diabetologist", "departmentName":"Endocrinology", "description": "Diabetologists are endocrinologists who specialise and focus on the treatment of diabetes mellitus" },
+    { "categoryName": "Cardiologist", "departmentName":"Cardiology", "description": "Cardiologists are doctors who have extra education and training in preventing, diagnosing and treating heart conditions." },
+    { "categoryName": "Weight Management", "departmentName":"Nutrition and Dietetics", "description": "Weight management refers to behaviors, techniques, and physiological processes that contribute to a person's ability to attain and maintain a healthy weight" },
+    { "categoryName": "Breast feeding advice", "departmentName":"Obstetrics and Gynecology", "description": "A lactation consultant is trained and certified to help you with any problems or concerns related to breastfeeding your baby and lactating (including weaning)."}
+    ]
+}
+
+
+### GET Category By Id
+GET http://localhost:5000/categories/65ce1d2877c9c036cefce4d6
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NWRmMGM3MzI4YTliM2U2YjNlMTg0NzkiLCJpYXQiOjE3MDkxMjA5MDV9.DyftnbwYqeY_wDAoq8FY6b2-rJj1hQVIlwD-CqSHAwA
+
+
+### GET All Categories
+GET http://localhost:5000/categories
+
+
+### DELETE Category By Id
+DELETE http://localhost:5000/categories/65ce1d2877c9c036cefce4d6
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NWRmMGM3MzI4YTliM2U2YjNlMTg0NzkiLCJpYXQiOjE3MDkxMjA5MDV9.DyftnbwYqeY_wDAoq8FY6b2-rJj1hQVIlwD-CqSHAwA
+
+### Update Category By Id
+PATCH http://localhost:5000/categories/65ce1d2877c9c036cefce4d6
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NWRmMGM3MzI4YTliM2U2YjNlMTg0NzkiLCJpYXQiOjE3MDkxMjA5MDV9.DyftnbwYqeY_wDAoq8FY6b2-rJj1hQVIlwD-CqSHAwA
+
+{
+   "categoryName": "Bevqerages", "description": "Soft, Tea" 
+}

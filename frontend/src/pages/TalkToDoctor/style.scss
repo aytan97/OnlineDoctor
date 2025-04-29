@@ -1,0 +1,182 @@
+.doctors-list {
+    margin-bottom: 40px;
+    padding-bottom: 40px;
+
+    .lgp-5 {
+
+        padding: 1rem;
+
+        @media (min-width: 1024px) {
+            padding: 1.25rem;
+        }
+
+        &:hover {
+            transform: scale(1.035);
+            transition: 0.5s transform;
+        }
+
+        .doctor-info {}
+    }
+
+    .doctors {
+
+        .image {
+            border-radius: 7px;
+            overflow: hidden;
+
+            img {
+                width: 250px;
+                height: 250px;
+                object-fit: cover;
+            }
+        }
+
+        .card-header {
+            font-size: 18px;
+            line-height: 30px;
+
+            @media (min-width: 1024px) {
+                font-size: 26px;
+                line-height: 36px;
+            }
+
+            color: var(--dark-text);
+            font-weight: 700;
+            margin-top: 0.75rem;
+
+            @media (min-width: 1024px) {
+                margin-top: 1.25rem;
+            }
+        }
+
+        .details {
+            @media (min-width: 1024px) {
+                margin-top: 1rem;
+            }
+        }
+
+        .speciality {
+
+            color: var(--primary-color);
+
+            @media (min-width: 1024px) {
+                padding-top: 0.5rem;
+                padding-bottom: 0.5rem;
+                padding-right: 1.5rem;
+                font-size: 12px;
+                line-height: 1.75rem;
+                font-weight: 600;
+            }
+
+            line-height: 1.75rem;
+
+            @media (min-width: 1024px) {
+                font-size: 16px;
+
+            }
+        }
+
+        .languages {
+            font-size: 12px;
+        }
+
+        .stars {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 14px;
+            line-height: 1.5rem;
+            font-weight: 600;
+            color: var(--dark-text);
+
+            @media (min-width: 1024px) {
+                font-size: 16px;
+                line-height: 1.75rem;
+            }
+
+            img {
+                width: 20px;
+                height: 20px;
+            }
+        }
+
+        .rating {
+            font-size: 14px;
+            line-height: 1.5;
+            font-weight: 400;
+            color: var(--dark-text);
+
+            @media (min-width: 1024px) {
+                font-size: 16px;
+                line-height: 1.75;
+                font-weight: 400;
+            }
+
+            .text-textColor {
+                color: var(--dark-text);
+            }
+        }
+
+        .patients {
+            margin-top: 18px;
+
+            @media (min-width: 1024px) {
+                margin-top: 1.25rem;
+
+            }
+
+            .totalPatients {
+                font-size: 14px;
+                line-height: 1.75;
+                font-weight: 600;
+                color: var(--dark-text);
+
+                @media (min-width: 1024px) {
+                    font-size: 16px;
+                    line-height: 30px;
+                }
+            }
+
+            .hospital {
+                font-size: 14px;
+                line-height: 1.75;
+                font-weight: 400;
+                color: var(--dark-text);
+                word-wrap: break-word;
+                width: 200px;
+            }
+
+            .go-details {
+                width: 35px;
+                height: 35px;
+                border-radius: 50%;
+                border: 1px solid var(--primary-color);
+                margin-top: 30px;
+                margin-left: auto;
+                margin-right: auto;
+                @include flex(center, null, center);
+                transition: background-color 0.3s, border-color 0.3s;
+
+                &:hover {
+                    background-color: var(--primary-color);
+                    border: none;
+
+                    i {
+                        color: white;
+                    }
+                }
+
+                i {
+                    color: var(--primary-color);
+                    font-size: 1rem;
+
+                }
+
+            }
+        }
+    }
+
+    .doctors {
+        row-gap: 50px;
+    }
+}

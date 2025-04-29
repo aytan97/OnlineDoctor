@@ -1,0 +1,32 @@
+.contacts {
+    height: 40px;
+    background-color: var(--primary-color);
+
+    color: var(--white);
+    padding: 10px 20px 10px 20px;
+
+    box-sizing: border-box;
+
+
+
+
+    span {
+        margin-right: 15px;
+
+        i {
+            margin-right: 7px;
+        }
+    }
+
+    .contact-detail {
+        text-decoration: none;
+        color: var(--white);
+
+    }
+
+    .social-medias {
+        font-size: 1.2rem;
+
+    }
+
+}

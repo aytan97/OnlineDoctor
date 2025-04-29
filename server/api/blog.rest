@@ -1,0 +1,51 @@
+### Write blog
+
+POST http://localhost:5000/blog/writeBlog
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NjIwMDY5MWEzNGZlYjI0MjJlNDljY2IiLCJpYXQiOjE3MTM3MDM5NDgsImV4cCI6MTcxMzc5MDM0OH0.VFJHgrRXwxTHmt0IOwp7uQ5HY2QwSZCHL0O0P_Pg0Bo
+
+
+{
+  "categoryId": "6621fc47adb96593e528ca03",
+  "title": "this is title",
+  "description": "this is description",
+  "body": "This is body",
+  "status": "draft",
+  "tags": "test"
+}
+
+
+
+### GET All Categories
+
+GET http://localhost:5000/blog
+
+
+
+
+### Get myBlogs
+GET http://localhost:5000/blog/getMyBlogs
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NjIwMDY5MWEzNGZlYjI0MjJlNDljY2IiLCJpYXQiOjE3MTM4MTIyMDQsImV4cCI6MTcxMzg5ODYwNH0.7p2fLo_0lx59zBy5jVlt6Dz6mT57hnLhbil5YRnWPY0
+
+
+
+
+### GET Category By Id
+GET http://localhost:5000/blog/66254e099a00efba007f2cf2
+
+
+
+
+### Update Category By Id
+PATCH http://localhost:5000/blog/66254e099a00efba007f2cf2
+Content-Type: application/json
+
+{
+   "body": "Bevqerages"
+}
+
+
+
+### DELETE Category By Id
+DELETE http://localhost:5000/blog/66251f39e16a47df169b8b90

@@ -1,0 +1,88 @@
+@mixin flex($justify-content: null, $flex-direction: null, $align: null) {
+    display: flex;
+    justify-content: $justify-content;
+    flex-direction: $flex-direction;
+    align-items: $align;
+}
+
+$breakpoints: (
+    phone: 767px,
+    tablet: 768px,
+    laptop: 992px,
+    desktop: 1200px
+);
+
+@mixin media-query($breakpoint) {
+    $breakpoint-value: map-get($breakpoints, $breakpoint);
+
+    @if $breakpoint==desktop {
+        @media only screen and (min-width: $breakpoint-value) {
+            @content;
+        }
+    }
+
+    @else {
+        @media only screen and (max-width: $breakpoint-value) {
+            @content;
+        }
+    }
+}
+
+
+
+@mixin reusable-button {
+    border-radius: 20px;
+    border: 1px solid var(--primary-color);
+    background-color: var(--primary-color);
+    color: var(--white);
+    font-size: 12px;
+    font-weight: bold;
+    padding: 12px 45px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    transition: transform 80ms ease-in;
+
+
+    &:hover {
+        transform: translateY(-2px);
+    }
+}
+
+
+@mixin input-styles {
+    box-sizing: border-box;
+    max-width: 100%;
+    background: #eef5f3;
+    outline: 0;
+    border: none;
+    font-family: "GothamPro Medium", serif;
+    font-size: .875rem;
+    border-radius: 25px;
+    color: var(--input-color);
+    padding: 0 24px;
+    transition: background .3s;
+    margin-right: 15px;
+}
+
+
+@mixin input-blogs-styles {
+    padding: 8px 12px;
+    font-size: 16px;
+    line-height: 1.5;
+    color: rgb(156, 156, 156);
+    background-color: #fff;
+    background-image: none;
+    border: 1px solid #d9d9d9;
+    border-radius: 6px;
+    transition: border-color 0.3s;
+
+    &:hover,
+    &:focus,
+    .ant-select:hover,
+    .ant-select:focus {
+        border-color: var(--primary-color);
+        outline: 0;
+        box-shadow: 0 1px 1px 0px rgba(38, 145, 155, 0.2);
+    }
+
+}

@@ -1,0 +1,244 @@
+.editor {
+
+    @media screen and (max-width: 800px) {
+        margin-top: 30px;
+
+    }
+
+    .form-group {
+        width: 100%;
+
+        @media screen and (max-width: 800px) {
+            width: 100%;
+
+        }
+
+        @media screen and (max-width: 670px) {}
+
+        .error {
+            color: red;
+            text-align: left;
+        }
+
+    }
+
+    .media {
+        width: 100%;
+
+        @media screen and (max-width: 800px) {
+            width: 100%;
+            @include flex(center, column, start);
+        }
+
+        .error {
+            color: red;
+
+            text-align: left;
+        }
+
+        .blog-picture {
+            width: 50px;
+            height: 50px;
+            border-radius: 7px;
+            overflow: hidden;
+            margin-left: 5px;
+
+            img {
+                width: 50px !important;
+                height: 50px !important;
+                object-fit: contain;
+            }
+        }
+    }
+
+
+    input[type="text"],
+    input[type="email"],
+    input[type="password"],
+    .image-hidder {
+        width: 80%;
+        height: 50px;
+        @include input-blogs-styles;
+
+        input[type="file"] {
+            display: none;
+        }
+
+    }
+
+    .media-800 {
+        @media screen and (max-width: 800px) {
+            margin-bottom: 0px;
+        }
+    }
+
+    .image-hidder {
+        width: 60%;
+        @include flex(start, null, center);
+        color: rgb(192, 192, 192);
+    }
+
+    .quill {
+        margin: 20px 0 10px 0;
+        font-family: 'Roboto', sans-serif;
+        width: 100%;
+
+        @include media-query(laptop) {
+            width: 600px;
+        }
+
+        @include media-query(tablet) {
+            width: 500px;
+        }
+
+        @media screen and (min-width: 1000px) {
+            width: 900px;
+        }
+
+        @media screen and (max-width: 568px) {
+            width: 400px;
+        }
+
+        @media screen and (max-width: 520px) {
+            width: 300px;
+        }
+
+        &:hover,
+        &:focus {
+            border-color: var(--primary-color) !important;
+            outline: 0;
+            box-shadow: 0 3px 9px 0px rgba(38, 145, 155, 0.2);
+        }
+
+    }
+
+    .ql-container.ql-snow {
+        height: 200px;
+        border-color: #d9d9d9 !important;
+        border-bottom-left-radius: 6px;
+        border-bottom-right-radius: 6px;
+    }
+
+    .ql-toolbar {
+        @include flex(start, null, center);
+
+        @media screen and (max-width: 520px) {
+            @include flex(start, column, start);
+            padding: 15px;
+        }
+    }
+
+    .ql-toolbar.ql-snow {
+        border-color: #d9d9d9 !important;
+        border-top-left-radius: 6px;
+        border-top-right-radius: 6px;
+    }
+
+    .ql-bold,
+    .ql-italic,
+    .ql-underline,
+    .ql-list,
+    .ql-link {
+        margin: 0px;
+    }
+
+
+
+    .ql-formats,
+    .ql-snow .ql-picker-label {
+        margin: 0;
+    }
+
+    .btns {
+
+        @media screen and (max-width: 520px) {
+            @include flex(center, column, end);
+            padding-right: 10px;
+            box-sizing: border-box;
+        }
+
+        button {
+            @media screen and (max-width: 650px) {
+                font-size: 12px;
+                margin-right: 10px;
+
+            }
+
+
+
+        }
+
+        .ant-select-selection-item {
+            font-size: 18px !important;
+            color: var(--primary-color);
+        }
+
+    }
+
+    .media-tags {
+        .ant-select {
+            width: 900px;
+
+            @include media-query(laptop) {
+                width: 600px;
+                margin-bottom: 10px;
+            }
+
+            @include media-query(tablet) {
+                width: 400px;
+            }
+
+
+            @include media-query(phone) {
+                width: 300px;
+            }
+        }
+    }
+}
+
+
+.css-dev-only-do-not-override-1qfezbu.ant-select-outlined:not(.ant-select-disabled):not(.ant-select-customize-input):hover .ant-select-selector,
+.css-dev-only-do-not-override-1qfezbu.ant-select-outlined:focus .ant-select-selector,
+.css-dev-only-do-not-override-1qfezbu.ant-select-single:focus-visible .ant-select-selector .ant-select-selection-search {
+
+    border-color: var(--primary-color) !important;
+    box-shadow: 0 1px 1px 0px rgba(38, 145, 155, 0.2) !important;
+    outline: 0;
+
+}
+
+.ant-select-selector {
+
+    border-color: #d9d9d9 !important;
+    overflow-y: auto !important;
+
+}
+
+
+
+
+.form-group:nth-child(1) input {
+
+    @media screen and (max-width: 800px) {
+        margin-bottom: 20px;
+
+    }
+}
+
+.form-group input[name="phoneNumber"] {
+    @media screen and (max-width: 800px) {
+        margin-bottom: 20px;
+    }
+}
+
+.form-group input[name="age"] {
+    @media screen and (max-width: 800px) {
+        margin-bottom: 0px;
+    }
+}
+
+.form-group div[name="categoryId"] {
+    @media screen and (max-width: 800px) {
+        margin-bottom: 20px;
+    }
+}

@@ -1,0 +1,93 @@
+.question-form {
+    max-width: 1040px;
+    height: 350px;
+
+    .starred-feedback {
+        .text-yellowColor {
+            color: #ffd200;
+            ;
+        }
+
+        .text-gray-400 {
+            color: gray;
+            font-weight: 400;
+        }
+    }
+
+    .starcolor {
+        cursor: pointer;
+        background: transparent;
+        border: none;
+        outline: none;
+        font-size: 22px;
+    }
+
+    input[type="email"] {
+        @include input-blogs-styles;
+        width: 250px;
+        height: 40px;
+    }
+
+    textarea {
+        width: 860px;
+        height: 200px;
+        border: 1px solid #d9d9d9;
+        border-radius: 6px;
+        padding: 6.4px 12px;
+        font-size: 16px;
+        line-height: 1.5;
+        color: rgb(156, 156, 156);
+
+        &:hover,
+        &:focus {
+            border-color: var(--primary-color);
+            outline: 0;
+            box-shadow: 0 1px 1px 0px rgba(38, 145, 155, 0.2);
+        }
+
+        @media screen and (max-width:1400px) {
+            width: 760px;
+            height: 200px;
+        }
+
+        @media screen and (max-width:1200px) {
+            width: 620px;
+            height: 200px;
+        }
+
+        @include media-query(tablet) {
+            width: 300px;
+            margin-bottom: 10px;
+        }
+
+
+        @include media-query(laptop) {
+            width: 460px;
+        }
+
+        @media screen and (max-width:790px) {
+            width: 460px;
+            height: 200px;
+        }
+
+        @include media-query (phone) {
+            width: 350px;
+        }
+
+        @media screen and (max-width:540px) {
+            width: 300px;
+            height: 200px;
+        }
+
+    }
+
+    .give-feedback-form.submit-btn {
+        .ant-btn {
+            float: right;
+            font-size: 12px !important;
+            font-weight: bold !important;
+            width: 100px !important;
+            height: 40px !important;
+        }
+    }
+}

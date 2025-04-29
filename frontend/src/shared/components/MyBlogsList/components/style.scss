@@ -1,0 +1,23 @@
+.ant-image-preview-img {
+    width: 70%;
+}
+
+.ant-popconfirm-buttons {
+    .ant-btn-primary {
+        background-color: var(--primary-color) !important;
+    }
+}
+
+.ant-pagination.ant-pagination-mini.ant-table-pagination {
+    gap: 10px;
+}
+
+.ant-pagination-item,
+.ant-pagination-item-1,
+.ant-pagination-item-active {
+    border-color: var(--primary-color) !important;
+
+    a {
+        color: var(--primary-color) !important;
+    }
+}

@@ -1,0 +1,137 @@
+### Create New User
+POST http://localhost:5000/auth
+Content-Type: application/json
+ 
+{
+  "firstname": "Shuman",
+  "lastname": "Mehdiyeva",
+  "email": "aytanash@code.edu.az",
+  "password": "Pro247!!",
+  "confirmPassword": "Pro247!!",
+  "role":"patient",
+  "age":22
+}
+
+###
+
+POST http://localhost:5000/auth
+Content-Type: application/json
+
+{
+  "firstname": "Aytan",
+  "lastname": "Shikh",
+  "email": "aytanash@code.edu.az",
+  "password": "Pro247!!",
+  "confirmPassword": "Pro247!!",
+  "role":"doctor",
+  "ssnId":"fdg564f",
+  "categories":["66179cbbbe6871c5aff1538b","66179cbbbe6871c5aff1538a", "66179cbbbe6871c5aff1538e"]
+}
+
+
+###### Send otp
+POST http://localhost:5000/auth/verify-otp
+Content-Type: application/json
+
+{
+  "email":"aytanash@code.edu.az",
+  "otp": "813841"
+}
+
+### change status
+POST http://localhost:5000/auth/update-status/680f8403408eb3965ec9c49c
+Content-Type: application/json
+
+{
+  "status":"Active"
+}
+
+### Login
+
+POST http://localhost:5000/auth/login
+Content-Type: application/json
+
+{ 
+    "email": "aytan.sh.aa@gmail.com", 
+    "password": "Pro247!!" 
+}
+ 
+### Login
+POST http://localhost:5000/auth/login
+Content-Type: application/json
+
+{ 
+    "email": "ttesttry12@gmail.com", 
+    "password": "Pro247!!" 
+}
+
+
+### GET common Users
+
+GET http://localhost:5000/auth
+
+
+### GET common doctors
+
+GET http://localhost:5000/auth/getDoctors
+
+
+### Get me
+GET http://localhost:5000/auth/getMe
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NjJhYjM4ZWY3MDYxYzg4ODU4ZDAyMDUiLCJpYXQiOjE3MTQwNzQ1NzYsImV4cCI6MTcxNDE2MDk3Nn0.H0PPOWQHPhXso7JCTDQWdGI5ex2sQChGJgx8XcsNpPE
+
+### GET  User byid
+GET http://localhost:5000/auth/6628128b9bfb0572dfe785a9
+
+
+
+###GET user by id
+GET http://localhost:5000/auth/user/662771a2fc1170ca2f18e50b
+
+###Delete user by id
+DELETE http://localhost:5000/auth/662cc5d434a2b2f108ea4729
+
+###
+PATCH http://localhost:5000/auth/6628d1ab9bfb0572dfe78692
+Content-Type: application/json
+
+{
+"languageSkills": ["Azerbaijan","Russian"]
+}
+
+
+###
+
+GET https://api.zoom.us/v2/users/me
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJhdWQiOm51bGwsImlzcyI6Imo3ODhxWmVBVEJTUGRqbnRzZGZldWciLCJleHAiOjE3MTU4MDMxNDAsImlhdCI6MTcxNDcyMjkwNX0.usbx-dUr_lnacTkVF0DjfFXCJ9ohBr-A7shOBDWVpMU
+
+###
+
+curl --request POST \
+  --url https://api.zoom.us/v2/users/me/meetings \
+  --header 'authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJhdWQiOm51bGwsImlzcyI6Imo3ODhxWmVBVEJTUGRqbnRzZGZldWciLCJleHAiOjE3MTU4MDMxNDAsImlhdCI6MTcxNDcyMjkwNX0.usbx-dUr_lnacTkVF0DjfFXCJ9ohBr-A7shOBDWVpMU' \
+  --header 'Content-Type: application/json' \
+  --data '{
+    "topic": "Meeting Title",
+    "type": 2,
+    "start_time": "2024-05-03T13:00:00",
+    "duration": 60,
+    "timezone": "Asia/Baku",
+    "settings": {"join_before_host": true }
+}'
+
+
+curl --request POST \
+  --url https://api.zoom.us/v2/users/me/meetings \
+  --header 'authorization: Bearer YOUR_JWT_TOKEN' \
+  --header 'Content-Type: application/json' \
+  --data '{
+    "topic": "Meeting Title",
+    "type": 2,
+    "start_time": "2024-05-03T13:00:00",
+    "duration": 60,
+    "timezone": "Asia/Baku",
+    "settings": {"join_before_host": true }
+}'
+

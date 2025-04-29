@@ -1,0 +1,159 @@
+.editor {
+
+    .my-profile {
+        .form-group {
+
+            .toggle-btn {
+                box-shadow: none;
+                @include input-blogs-styles;
+                padding: 6.4px 12px;
+
+                @media screen and (max-width: 500px) {
+                    width: 300px;
+                }
+
+                @media screen and (max-width:348px) {
+                    width: 250px !important;
+                }
+            }
+
+            input[type="text"],
+            input[type="email"],
+            input[type="password"] {
+                width: 300px;
+
+                @media screen and (max-width:348px) {
+                    width: 250px !important;
+                }
+            }
+
+            .hide-image {
+                width: 120px;
+                height: 40px;
+                @include input-blogs-styles;
+
+                input[type="file"] {
+                    display: none;
+                }
+
+            }
+
+            input[type="number"] {
+                @include input-blogs-styles;
+                width: 300px;
+                height: 50px;
+
+                @media screen and (max-width:348px) {
+                    width: 250px !important;
+                }
+            }
+
+            textarea {
+                width: 620px;
+                height: 100px;
+                border: 1px solid #d9d9d9;
+                border-radius: 6px;
+                padding: 6.4px 12px;
+                font-size: 16px;
+                line-height: 1.5;
+                color: rgb(156, 156, 156);
+
+                &:hover,
+                &:focus {
+                    border-color: var(--primary-color);
+                    outline: 0;
+                    box-shadow: 0 1px 1px 0px rgba(38, 145, 155, 0.2);
+                }
+
+                @include media-query(tablet) {
+                    width: 300px;
+                    margin-bottom: 10px;
+                }
+
+
+                @include media-query(laptop) {
+                    width: 620px;
+                }
+
+                @media screen and (max-width:800px) {
+                    width: 300px;
+                    height: 200px;
+                }
+
+                @media screen and (max-width:348px) {
+                    width: 250px !important;
+                }
+
+            }
+
+            @media screen and (max-width: 800px) {
+                margin-bottom: 20px;
+            }
+
+        }
+
+        .add-profile {
+            position: absolute;
+            bottom: 60px;
+            right: -30px;
+            z-index: 1000;
+
+
+        }
+
+        .btns {
+            button[aria-label='delete-account'] {
+                color: red !important;
+                border-color: red !important;
+                font-size: 14px !important;
+                width: 145px;
+                @include flex(center, null, center);
+
+                @include media-query(phone) {
+                    font-size: 12px !important;
+                    width: 135px;
+                }
+            }
+
+            @include media-query(laptop) {
+                @include flex(center, column-reverse, end)
+            }
+
+        }
+    }
+
+    .lang-tags {
+        .ant-select {
+            width: 300px;
+            height: 50px;
+
+            @media screen and (max-width:348px) {
+                width: 250px !important;
+            }
+
+
+        }
+    }
+
+}
+
+
+.form-group div[name="languageSkills"] {
+    @media screen and (max-width: 800px) {
+        margin-bottom: 20px;
+    }
+}
+
+.form-group .dropdown .toggle-btn {
+    @media screen and (max-width: 800px) {
+        margin-bottom: 20px;
+    }
+}
+
+
+.css-dev-only-do-not-override-1qfezbu.ant-popover .ant-popover-content {
+    @include media-query(laptop) {
+        width: 200px;
+        left: -60px !important;
+    }
+}

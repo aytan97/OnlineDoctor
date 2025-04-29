@@ -1,0 +1,53 @@
+.features {
+    padding-top: 200px;
+    column-gap: 30px;
+    row-gap: 80px;
+
+    @include media-query(desktop) {
+
+        padding-top: 300px;
+    }
+
+    @include media-query(tablet) {
+        padding-top: 320px;
+    }
+
+    .card_ {
+        padding: 20px;
+        font-family: "Roboto", sans-serif;
+        color: var(--dark-text);
+        height: 300px;
+        @include flex(center, null, center);
+
+        .card-content {
+            @include flex(start, null, center);
+            height: 150px;
+
+
+            h4 {
+                font-size: 1.5rem;
+                text-align: center;
+                padding-bottom: 15px;
+            }
+
+            p {
+                text-align: center;
+                line-height: 30px;
+                letter-spacing: 2.5px;
+            }
+
+            img {
+                position: absolute;
+                top: -15%;
+            }
+        }
+
+    }
+
+    .card_:hover {
+        background-color: #f4f4f4;
+        border-bottom: 6px solid var(--primary-color);
+        box-shadow: var(--card-shadow);
+    }
+
+}

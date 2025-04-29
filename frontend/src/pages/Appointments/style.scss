@@ -1,0 +1,237 @@
+.appointments-list {
+    margin-bottom: 40px;
+    padding-bottom: 40px;
+
+    .appointment-lists {
+        .appointments-patient {
+            .app-item {
+                padding: 1rem;
+
+                @media (min-width: 1024px) {
+                    padding: 1.25rem;
+                }
+
+                &:hover {
+                    transform: scale(1.035);
+                    transition: 0.5s transform;
+                }
+
+                .image {
+                    border-radius: 7px;
+                    overflow: hidden;
+
+                    img {
+                        width: 180px;
+                        height: 180px;
+                        object-fit: cover;
+                    }
+                }
+
+
+                .appointment-info {
+                    width: 170px;
+
+
+                    .card-header {
+                        font-size: 16px;
+                        line-height: 16px;
+                        word-wrap: break-word;
+                        height: 30px;
+
+                        @media (min-width: 1024px) {
+                            font-size: 18px;
+                            line-height: 16px;
+                            height: 30px;
+                        }
+
+                        color: var(--dark-text);
+                        font-weight: 700;
+                        margin-top: 0.75rem;
+
+                    }
+
+                    .speciality {
+                        height: 40px;
+                        color: var(--primary-color);
+                        line-height: 1.35rem;
+                        font-size: 14px;
+
+                        @include media-query (tablet) {
+                            padding-top: 0.5rem;
+                            padding-bottom: 0.5rem;
+                            padding-right: 1.5rem;
+                            font-size: 13px;
+                            line-height: 1.15rem;
+                            font-weight: 400;
+                            height: 50px;
+                        }
+
+
+                    }
+
+                    .hospital,
+                    .date-time {
+                        font-size: 14px;
+                        line-height: 1.35;
+                        font-weight: 400;
+                        color: var(--dark-text);
+                        word-wrap: break-word;
+                        height: 40px;
+
+                    }
+
+                    .go-details {
+                        width: 35px;
+                        height: 35px;
+                        border-radius: 50%;
+                        border: 1px solid var(--primary-color);
+                        float: right;
+                        @include flex(center, null, center);
+                        transition: background-color 0.3s, border-color 0.3s;
+
+                        @include media-query(tablet) {}
+
+                        span {
+                            display: none;
+                        }
+
+                        &:hover {
+                            background-color: var(--primary-color);
+                            border: none;
+                            transition: 0.3s linear;
+
+                            i {
+                                display: none;
+                            }
+
+                            span {
+                                display: block;
+                                color: white;
+                                font-size: 20px;
+                            }
+
+                            width: 100px;
+                            height: 35px;
+                            border-radius: 10px;
+                        }
+
+                        i {
+                            color: var(--primary-color);
+                            font-size: 1rem;
+
+                        }
+
+                    }
+                }
+            }
+        }
+
+        .appointments-doctor {
+            .app-item {
+                padding: 1rem;
+
+                @media (min-width: 1024px) {
+                    padding: 1.25rem;
+                }
+
+                &:hover {
+                    transform: scale(1.035);
+                    transition: 0.5s transform;
+                }
+
+                .image {
+                    border-radius: 7px;
+                    overflow: hidden;
+
+                    img {
+                        width: 180px;
+                        height: 180px;
+                        object-fit: cover;
+                    }
+                }
+
+
+                .appointment-info {
+                    width: 170px;
+
+
+                    .card-header {
+                        font-size: 16px;
+                        line-height: 16px;
+                        word-wrap: break-word;
+                        height: 30px;
+
+                        @media (min-width: 1024px) {
+                            font-size: 18px;
+                            line-height: 16px;
+                            height: 30px;
+                        }
+
+                        color: var(--dark-text);
+                        font-weight: 700;
+                        margin-top: 0.75rem;
+
+                    }
+
+
+                    .date-time {
+                        font-size: 14px;
+                        line-height: 1.35;
+                        font-weight: 400;
+                        color: var(--dark-text);
+                        word-wrap: break-word;
+                        height: 40px;
+
+                    }
+
+                    .go-details {
+                        width: 35px;
+                        height: 35px;
+                        border-radius: 50%;
+                        border: 1px solid var(--primary-color);
+                        float: right;
+                        @include flex(center, null, center);
+                        transition: background-color 0.3s, border-color 0.3s;
+
+                        @include media-query(tablet) {}
+
+                        span {
+                            display: none;
+                        }
+
+                        &:hover {
+                            background-color: var(--primary-color);
+                            border: none;
+                            transition: 0.3s linear;
+
+                            i {
+                                display: none;
+                            }
+
+                            span {
+                                display: block;
+                                color: white;
+                                font-size: 20px;
+                            }
+
+                            width: 100px;
+                            height: 35px;
+                            border-radius: 10px;
+                        }
+
+                        i {
+                            color: var(--primary-color);
+                            font-size: 1rem;
+
+                        }
+
+                    }
+                }
+            }
+        }
+    }
+
+    .appointments-patient {
+        row-gap: 50px;
+    }
+}

@@ -1,0 +1,30 @@
+Home Page
+Sign up for doctor
+SIgn up for patient
+
+API
+Sign in
+Permissions
+FAQ
+
+
+Talk to Doctor
+Selected doctor info
+Make reservation
+Join Meeting 
+My reservations
+
+
+Write receipt
+written receipts
+
+
+Write blog
+Blogs
+Selected single blog
+
+
+paid billings
+
+
+User profile

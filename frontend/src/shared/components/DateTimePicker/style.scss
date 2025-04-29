@@ -1,0 +1,47 @@
+.date-time-container {
+    @include flex(space-around, null, start);
+
+    @include media-query(laptop) {
+        @include flex(center, column, center);
+        gap: 30px;
+    }
+
+
+    .date-time-picker {
+        .time-picker {
+            width: 310px;
+
+
+
+
+        }
+    }
+
+    label[data-shrink="true"] {
+        top: -10px
+    }
+
+    .my-availability-list {
+        width: 400px;
+
+        .css-dev-only-do-not-override-1qfezbu.ant-table-wrapper .ant-table.ant-table-middle .ant-table-tbody>tr>td {
+            padding: 4px 15px;
+        }
+
+        @include media-query(laptop) {
+            margin-bottom: 20px;
+            // padding: 20px 0px;
+
+        }
+
+        @include media-query(phone) {
+            width: 340px;
+        }
+    }
+}
+
+.error {
+    font-size: 15px;
+    color: red;
+    padding: 10px 0px 20px 0px;
+}

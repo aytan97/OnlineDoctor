@@ -1,0 +1,17 @@
+.css-dev-only-do-not-override-1qfezbu.ant-btn-default:not(:disabled):not(.ant-btn-disabled):active,
+.css-dev-only-do-not-override-1qfezbu.ant-btn-default:not(:disabled):not(.ant-btn-disabled) {
+    color: var(--primary-color) !important;
+    border-color: var(--primary-color) !important;
+}
+
+.css-dev-only-do-not-override-1qfezbu.ant-btn:not(:disabled):focus-visible {
+    outline: 4px solid rgba(38, 145, 155, 0.2) !important;
+    outline-offset: 1px;
+    transition: outline-offset 0s, outline 0s;
+}
+
+.ant-btn {
+    height: 50px;
+    font-size: 18px;
+    float: right;
+}

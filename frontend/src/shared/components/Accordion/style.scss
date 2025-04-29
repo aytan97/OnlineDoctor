@@ -1,0 +1,70 @@
+.title {
+    cursor: pointer;
+
+    img {
+        width: 30px;
+    }
+
+    .turn-180 {
+        rotate: 180deg;
+    }
+
+}
+
+.acc-content {
+    height: 0;
+    overflow: hidden;
+
+    p {
+        text-align: center;
+    }
+}
+
+
+.acc-content.active {
+    transition: .2s cubic-bezier(.58, .3, .005, 1);
+    height: 80px;
+
+}
+
+.accordion {
+    box-shadow: 0 0 5px rgba(24, 24, 24, 0.161);
+    @include flex(space-between, null, center);
+    padding: 20px;
+    margin-bottom: 30px;
+
+    .question-mark {
+        width: 40px;
+    }
+
+
+}
+
+.qna {
+
+    h1 {
+        @include media-query(phone) {
+            font-size: 28px;
+        }
+
+        @media (max-width:550px) {
+            font-size: 20px;
+            text-wrap: wrap;
+            text-align: center;
+        }
+    }
+
+    .accordionfaq {
+
+        width: 600px;
+        height: 450px;
+
+        @include media-query(tablet) {
+
+            width: 80%;
+        }
+
+
+    }
+
+}

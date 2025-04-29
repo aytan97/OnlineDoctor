@@ -1,0 +1,59 @@
+.my-blogs-list {
+
+    .ant-card-body {
+        padding: 0px !important;
+    }
+
+    .ant-table-content {
+        .ant-table-thead {
+
+            @include media-query(phone) {
+                width: 350px;
+
+
+                tr {
+
+                    display: none;
+
+                }
+            }
+        }
+
+
+        .ant-table-tbody {
+
+            @include media-query(phone) {
+                @include flex(center, column, center);
+                gap: 15px;
+
+
+            }
+
+            .ant-table-row {
+
+                @include media-query(phone) {
+                    width: 300px;
+                    display: flex;
+                    flex-direction: column;
+                    border: 1px solid #f0f0f0;
+                    padding: 20px;
+                    border-radius: 7px;
+
+
+
+                }
+
+
+            }
+        }
+    }
+
+    @include media-query(phone) {
+
+
+        .css-dev-only-do-not-override-1qfezbu.ant-card-bordered {
+            border: none;
+        }
+
+    }
+}

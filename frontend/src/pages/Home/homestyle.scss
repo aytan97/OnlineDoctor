@@ -1,0 +1,14 @@
+.home-container {
+
+    .banner {
+        position: relative;
+    }
+
+    .home-body {
+        @include flex(center, column, center);
+        row-gap: 70px;
+        padding-bottom: 30px;
+    }
+
+
+}

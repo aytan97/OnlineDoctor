@@ -1,0 +1,4 @@
+.loader-spinner {
+    @include flex(center, null, center);
+    height: 60vh;
+}

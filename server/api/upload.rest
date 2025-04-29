@@ -1,0 +1,7 @@
+###Upload photo
+POST http://localhost:5000/uploads/upload-image
+Content-Type: image/jpeg
+ 
+{
+  "image":"2205_w048_n004_118b_p1_118.jpg"
+}

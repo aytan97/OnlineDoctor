@@ -1,0 +1,80 @@
+@import './globalmixins.scss';
+@import './variables.scss';
+@import '../shared/components/Card/style.scss';
+@import '../shared/components//NotFound/style.scss';
+@import '../shared/components/Banner/style.scss';
+@import '../shared/components/MyBlogsList/components/style.scss';
+@import '../shared/components/Accordion/style.scss';
+@import '../shared/components/HomeFeatures/style.scss';
+@import '../shared/components/HomeSlider/style.scss';
+@import '../shared/components/SignupasPatient/style.scss';
+@import '../shared/components/MyProfile/style.scss';
+@import '../shared/components/SignupasDoctor/style.scss';
+@import '../shared/components/DoctorDetails/style.scss';
+@import '../shared/components/DoctorDetails/addedAvailabilityList/PaymentForm/style.scss';
+@import '../shared/components/FAQForm/style.scss';
+@import '../shared/components/BlogDetails/style.scss';
+@import '../shared/components/MyBlogsList/style.scss';
+@import '../shared/layout/Header/headerstyle.scss';
+@import '../shared/layout/Contacts/style.scss';
+@import '../shared/layout/Footer/style.scss';
+@import '../shared/layout/ReactQuill/style.scss';
+@import '../shared/layout/SignupToggle/style.scss';
+@import '../shared/layout/OTPVerification/style.scss';
+@import '../shared/layout/ReactSpinner/style.scss';
+@import '../shared/layout/HeaderUser/headeruser.scss';
+@import '../pages/Home/homestyle.scss';
+@import '../pages//Appointments/style.scss';
+@import '../pages/WriteBlog/style.scss';
+@import '../pages/MyBlogs/style.scss';
+@import '../pages/Profile/style.scss';
+@import '../pages/auth/index.scss';
+@import '../pages/Receipts/style.scss';
+@import '../pages/TalkToDoctor/style.scss';
+@import '../pages/Blogs/style.scss';
+@import '../pages/VideoConferance/style.scss';
+@import '../pages/AvailabilityConfig/style.scss';
+@import '../shared/components/DateTimePicker/style.scss';
+@import '../shared/components/WriteReceipt/style.scss';
+
+
+
+a {
+    text-decoration: none;
+}
+
+
+@media screen and (max-width: 700px) {
+    .d-xs-none {
+        display: none;
+    }
+}
+
+.str-video {
+    margin-top: 20px !important;
+    border-radius: 12px !important;
+    background-color: #272a30;
+    color: white;
+    height: 80vh;
+    width: 80vw;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+button[data-testid="cancel-call-button"] {
+    margin-top: 0px;
+}
+
+@media screen and (max-width:600px) {
+
+    .str-video__call-controls {
+        gap: 5px;
+    }
+
+    .str-video__composite-button.str-video__composite-button--menu .str-video__composite-button__button {
+        padding-right: 1.5rem;
+    }
+}

@@ -1,0 +1,115 @@
+.signup-toggle-container {
+    width: 100%;
+    color: var(--dark-text);
+    font-family: 'Roboto', sans-serif;
+    height: 680px;
+    padding-top: 30px;
+
+
+    .switch-signup {
+        @include flex(center, null, center);
+        margin-bottom: 20px;
+
+        .signup-slider {
+            position: relative;
+            padding: 10px;
+            width: 380px;
+            height: 48px;
+            cursor: pointer;
+            background-color: var(--primary-color);
+            transition: .4s;
+            border-radius: 34px;
+            color: var(--white);
+            @include flex(start, null, center);
+
+            @include media-query(tablet) {
+                width: 280px;
+            }
+
+            @include media-query(phone) {
+                width: 250px;
+            }
+
+
+            @media screen and (max-width: 500px) {
+                width: 200px;
+            }
+        }
+
+        .signup-slider:before {
+            margin-top: 10px;
+            content: "";
+            height: 30px;
+            width: 50px;
+            background-color: var(--white);
+            transition: .4s;
+            border-radius: 20px;
+        }
+
+        .signup-slider.round-checked {
+            background-color: #a7a7ad;
+            color: rgb(255, 255, 255);
+        }
+
+        .signup-slider.round-checked:before {
+            transform: translateX(180px);
+
+            @include media-query(tablet) {
+                transform: translateX(145px);
+            }
+
+            @include media-query(phone) {
+                transform: translateX(120px);
+            }
+
+            @media screen and (max-width: 500px) {
+                transform: translateX(95px);
+            }
+        }
+
+        .signup-slider.signup-round {
+            border-radius: 34px;
+            font-size: 22px;
+
+        }
+
+        .signup-slider.signup-round:before {
+            border-radius: 25px;
+            width: 180px;
+            position: absolute;
+            top: -3px;
+            height: 35px;
+
+
+            @include media-query(tablet) {
+                width: 120px;
+            }
+
+            @include media-query(phone) {
+                width: 110px;
+            }
+
+            @media screen and (max-width: 500px) {
+                width: 90px;
+            }
+        }
+
+        .signup-slider-content {
+            @include flex(space-around, row, center);
+            width: 100%;
+
+            @include media-query(tablet) {
+                font-size: 20px;
+            }
+
+            @include media-query(phone) {
+                font-size: 18px;
+            }
+
+            @media screen and (max-width: 500px) {
+                font-size: 15px;
+            }
+        }
+    }
+
+}

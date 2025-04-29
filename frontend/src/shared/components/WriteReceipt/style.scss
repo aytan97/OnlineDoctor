@@ -1,0 +1,235 @@
+.receipt-management {
+    @include flex(space-between, null, start);
+    gap: 20px;
+
+    @include media-query(laptop) {
+        @include flex(center, column, center);
+        gap: 30px;
+    }
+
+    .receipt-form-container {
+        .form-items {
+            .error {
+                font-size: 20px;
+                color: red;
+                padding: 0px 0px 20px 0px;
+            }
+
+            .form-item {
+
+
+                width: 100%;
+                margin-bottom: 20px;
+
+                input[name="dosage"] {
+                    width: 50px;
+                    height: 50px;
+                    text-align: center;
+                    background-color: white;
+                    color: var(--input-color);
+
+                }
+
+
+
+            }
+
+            .drug-tags,
+            .time-of-day,
+            .repeat,
+            .tobetaken {
+                .ant-select {
+                    width: 300px;
+
+                    @include media-query(laptop) {
+                        width: 300px;
+                        margin-bottom: 10px;
+                    }
+                }
+            }
+
+            .dosage {
+                margin-top: 20px;
+                padding: 10px;
+                width: 220px;
+
+                border: 1px solid #d9d9d9;
+                border-radius: 6px;
+                color: var(--input-color);
+                transition: border-color 0.3s;
+
+                .css-dev-only-do-not-override-1qfezbu.ant-input {
+                    width: 50px;
+                    height: 45px;
+                    text-align: center;
+                }
+
+                &:hover,
+                &:focus,
+                .ant-select:hover,
+                .ant-select:focus {
+                    border-color: var(--primary-color);
+                    outline: 0;
+                    box-shadow: 0 1px 1px 0px rgba(38, 145, 155, 0.2);
+                }
+
+                .css-dev-only-do-not-override-1qfezbu.ant-btn-default:not(:disabled):not(.ant-btn-disabled):active,
+                .css-dev-only-do-not-override-1qfezbu.ant-btn-default:not(:disabled):not(.ant-btn-disabled) {
+                    width: 45px;
+                    height: 45px;
+                    border-color: #d9d9d9 !important;
+
+                    &:hover,
+                    &:focus {
+                        border-color: var(--primary-color) !important;
+                    }
+                }
+            }
+
+            .form-item.time-of-day {
+                margin-bottom: 0;
+            }
+
+            .form-item.addbtn {
+                margin-bottom: 0px;
+            }
+        }
+
+
+
+    }
+
+    .added-drug-list {
+        width: 800px;
+
+        @include media-query(phone) {
+            width: 350px;
+        }
+
+        .ant-table-content {
+            .ant-table-thead {
+
+                @include media-query(phone) {
+                    width: 350px;
+
+
+                    tr {
+
+                        display: none;
+
+                    }
+                }
+            }
+
+
+            .ant-table-tbody {
+                @include media-query(phone) {
+                    @include flex(center, column, center);
+                    gap: 15px;
+
+                    .css-dev-only-do-not-override-1qfezbu.ant-card-bordered {
+                        border: none;
+                    }
+
+                }
+
+                .ant-table-row {
+
+                    @include media-query(phone) {
+                        width: 320px;
+
+                        display: flex;
+                        flex-direction: column;
+                        border: 1px solid #c5c5c571;
+                        padding: 20px;
+                        border-radius: 7px;
+
+                        td:first-child:before {
+                            content: "First name: ";
+                            font-weight: bold;
+                            padding-right: 20px;
+                        }
+
+                        td:nth-child(2):before {
+                            content: "Last name:  ";
+                            font-weight: bold;
+                            padding-right: 20px;
+                        }
+
+                        td:nth-child(3):before {
+                            content: "Dosage:  ";
+                            font-weight: bold;
+                            padding-right: 38px;
+                        }
+
+                        td:nth-child(4):before {
+                            content: "Repeats:     ";
+                            font-weight: bold;
+                            padding-right: 34px;
+                        }
+
+                        td:nth-child(5):before {
+                            content: "To be taken:     ";
+                            font-weight: bold;
+                            padding-right: 10px;
+                        }
+
+                        td:nth-child(6):before {
+                            content: "Time of day:     ";
+                            font-weight: bold;
+                            padding-right: 10px;
+                        }
+                    }
+                }
+            }
+
+
+        }
+
+        @include media-query(phone) {
+
+
+            .css-dev-only-do-not-override-1qfezbu.ant-card-bordered {
+                border: none;
+            }
+
+        }
+    }
+
+    .css-dev-only-do-not-override-1qfezbu.ant-btn-default:not(:disabled):not(.ant-btn-disabled) {
+        margin: 10px;
+
+    }
+
+    .css-dev-only-do-not-override-1qfezbu.ant-btn-text:not(:disabled):not(.ant-btn-disabled) {
+        color: var(--dark-text) !important;
+        font-size: 14px !important;
+        height: 40px !important;
+        margin-top: 0;
+    }
+
+    .anticon-plus-circle {
+        svg:hover {
+            color: var(--primary-color);
+        }
+
+
+    }
+
+    .css-dev-only-do-not-override-1qfezbu.ant-btn-link {
+        color: red;
+        font-size: 14px;
+        margin-top: 0px !important;
+
+
+        &:hover {
+            color: red !important;
+        }
+    }
+
+}
+
+.css-1wy8uaa-MuiButtonBase-root-MuiPickersDay-root.Mui-selected,
+.MuiPickersDay-today.Mui-selected {
+    background-color: var(--primary-color) !important;
+}

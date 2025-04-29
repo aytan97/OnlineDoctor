@@ -1,0 +1,107 @@
+.banner_ {
+    height: 100vh;
+    @include flex(start, null, start);
+
+    @include media-query(tablet) {
+        background-position: center;
+        @include flex(start, null, center);
+    }
+
+
+
+
+    @media screen and (width: 820px) and (max-height: 1180px) {
+        height: 50vh;
+    }
+
+    @media screen and (max-width: 912px) and (max-height: 1368px) {
+        height: 70vh;
+    }
+
+
+
+    .banner-content {
+        width: 35%;
+        padding: 10px 40px;
+        font-family: "Roboto", sans-serif;
+        border-radius: none;
+        color: var(--dark-text);
+
+        h2 {
+            margin-bottom: 20px;
+            padding-bottom: 20px;
+            font-size: 3.1rem;
+            letter-spacing: 3px;
+            line-height: 60px;
+
+
+        }
+
+        p {
+            letter-spacing: 2px;
+            line-height: 25px;
+
+            @media screen and (max-width: 1600px) {
+                letter-spacing: 1.5px;
+                line-height: 20px;
+            }
+
+        }
+
+
+        @include media-query(tablet) {
+            h2 {
+                font-size: 2.7rem;
+                line-height: 50px;
+            }
+        }
+
+        @include media-query(desktop) {
+            h2 {
+                font-size: 3.1rem;
+                line-height: 55px;
+                margin-top: 30px;
+                padding-top: 30px;
+            }
+
+        }
+
+        @include media-query(laptop) {
+            p {
+                display: none;
+            }
+
+        }
+
+        @media screen and (width: 1024px) and (max-height: 600px) {
+            p {
+                display: none;
+            }
+        }
+
+
+
+        img {
+            width: 30px;
+            position: absolute;
+            right: 1%;
+        }
+
+
+
+        @media screen and (max-width: 700px) {
+            padding: 0px;
+        }
+
+    }
+
+    @include media-query(laptop) {
+        @include flex(start, null, center);
+    }
+
+
+    @media screen and (min-width: 980px) {
+        @include flex(start, null, center);
+    }
+
+}

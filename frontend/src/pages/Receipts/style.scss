@@ -1,0 +1,64 @@
+.prescriptions {
+    h1 {
+        color: var(--primary-color);
+
+        @media screen and (max-width:550px) {
+            font-size: 20px;
+        }
+    }
+
+    .order-now-display {
+        @media screen and (max-width:459px) {
+            display: none;
+        }
+    }
+
+    .receipts-container {
+        @include flex(center, null, center);
+        gap: 30px;
+        flex-wrap: wrap;
+
+        .reseipt-item {
+
+            height: 170px;
+            // border: 1px solid #ccc;
+            width: 200px;
+
+            box-shadow: 0 0 5px rgba(24, 24, 24, 0.161);
+
+            &:hover {
+                transform: scale(1.035);
+                transition: 0.5s transform;
+            }
+
+            .createdate {
+                width: 200px;
+                height: 60px;
+                padding: 20px 20px;
+                border-bottom: 0.6px solid #e4e4e4;
+                border-top-left-radius: 7px;
+                border-top-right-radius: 7px;
+            }
+
+            .doctor {
+                width: 200px;
+                height: 60px;
+                padding: 20px 20px;
+
+                border-bottom-left-radius: 7px;
+                border-bottom-right-radius: 7px;
+            }
+
+            .download-btn {
+                float: right;
+                padding-right: 10px;
+                padding-top: 10px;
+
+                i {
+                    color: var(--primary-color);
+                    font-size: 20px;
+                }
+            }
+        }
+    }
+}

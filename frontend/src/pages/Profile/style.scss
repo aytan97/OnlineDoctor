@@ -1,0 +1,41 @@
+.profile-container {
+
+
+    .profile-ittems {
+        @include flex(space-around, null, start);
+
+        @include media-query(tablet) {
+            @include flex(space-around, column, center);
+        }
+
+        .profile-item {
+            @include flex(space-between, column, center);
+
+            .select-photo {
+                @include flex(center, column, center);
+                position: relative;
+                row-gap: 30px;
+                margin-bottom: 30px;
+
+
+                .profile-picture {
+                    @include flex(center, column, center);
+                    margin-top: 20px;
+
+                    width: 200px;
+                    height: 200px;
+                    border-radius: 50%;
+                    border: 1px solid var(--primary-color);
+                    overflow: hidden;
+
+                    img {
+                        width: 200px;
+                        height: 200px;
+                        object-fit: cover;
+                    }
+
+                }
+            }
+        }
+    }
+}

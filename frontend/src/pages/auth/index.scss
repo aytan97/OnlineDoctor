@@ -1,0 +1,432 @@
+.login {
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+
+
+
+.login-container {
+
+  h1 {
+    font-weight: bold;
+    margin: 0;
+  }
+
+  p {
+    font-size: 14px;
+    font-weight: 100;
+    line-height: 20px;
+    letter-spacing: 0.5px;
+    margin: 0;
+    padding: 0;
+  }
+
+  span {
+    font-size: 12px;
+  }
+
+  a {
+    color: #514a9d;
+    font-size: 14px;
+    text-decoration: none;
+    margin: 15px 0;
+  }
+
+
+
+  button[aria-label="close"] {
+    margin-top: 20px !important;
+    border-radius: 20px !important;
+    font-size: 12px !important;
+    font-weight: bold !important;
+    letter-spacing: 1px !important;
+    text-transform: uppercase !important;
+    float: right !important;
+    width: 24px !important;
+    height: 19px !important;
+    padding: 0 !important;
+    background-color: lightgray !important;
+    border-color: lightgray !important;
+
+    &:hover {
+      background-color: black !important;
+      opacity: 0.3;
+    }
+  }
+
+
+  button {
+    @include reusable-button;
+  }
+
+  button:active {
+    transform: scale(0.95);
+  }
+
+  button:focus {
+    outline: none;
+  }
+
+  button.ghost {
+    background-color: transparent;
+    border-color: var(--white);
+  }
+
+
+
+  form {
+    background-color: var(--white);
+    @include flex(center, column, center);
+    height: 100%;
+    text-align: center;
+  }
+
+  input {
+    background-color: #eee;
+    border: none;
+    padding: 12px 15px;
+    margin: 8px 0;
+    width: 100%;
+  }
+
+  .social-container {
+    margin: 20px 0;
+  }
+
+  .social-container a {
+    border: 1px solid #dddddd;
+    border-radius: 50%;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 5px;
+    height: 40px;
+    width: 40px;
+    color: #000;
+  }
+
+  .container {
+    &.right-panel-active {
+      .sign-in-container {
+        transform: translateX(0%);
+        overflow: hidden;
+
+
+      }
+
+      .sign-up-container {
+        overflow-y: auto;
+        transform: translateX(67%);
+        opacity: 1;
+        z-index: 5;
+        animation: show 0.8s;
+        @include flex(center, null, center);
+        background-color: var(--white);
+
+        @include media-query(laptop) {
+          @include flex(center, column, center);
+        }
+      }
+
+      .overlay-container {
+        transform: translateX(-150%);
+      }
+
+      .overlay {
+        transform: translateX(50%);
+      }
+    }
+
+    @keyframes show {
+
+      0%,
+      49.99% {
+        opacity: 0;
+        z-index: 1;
+      }
+
+      50%,
+      100% {
+        opacity: 1;
+        z-index: 5;
+      }
+    }
+  }
+
+  .form-container {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    transition: all 0.6s ease-in-out;
+
+
+    &.sign-in-container {
+      left: 0;
+      width: 59%;
+      z-index: 2;
+    }
+
+    &.sign-up-container {
+      left: 0;
+      width: 59%;
+      opacity: 0;
+      z-index: 1;
+
+
+    }
+  }
+
+  .overlay-container {
+    position: absolute;
+    top: 0;
+    left: 60%;
+    width: 40%;
+    height: 100%;
+    overflow: hidden;
+    transition: transform 0.6s ease-in-out;
+    z-index: 100;
+
+
+
+    .overlay {
+      background: var(--primary-color);
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: 0 0;
+      color: var(--white);
+      position: relative;
+      left: -100%;
+      height: 100%;
+      width: 200%;
+      transform: translateX(0);
+      transition: transform 0.6s ease-in-out;
+
+      .overlay-panel {
+        position: absolute;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        text-align: center;
+        top: 0;
+        height: 100%;
+        width: 50%;
+        transform: translateX(0);
+        transition: transform 0.6s ease-in-out;
+
+        &.overlay-left {
+          transform: translateX(-2%);
+
+          h3 {
+            @media screen and (max-width: 600px) {
+              font-size: 14px;
+              margin-bottom: 15px;
+              font-weight: 400;
+              line-height: 20px;
+            }
+          }
+
+          h2 {
+            @media screen and (max-width: 600px) {
+              font-weight: 400;
+              margin-bottom: 30px;
+            }
+          }
+        }
+
+        &.overlay-right {
+          right: 0;
+          transform: translateX(0);
+
+          h3 {
+            @media screen and (max-width: 600px) {
+              font-size: 14px;
+              margin-bottom: 15px;
+              font-weight: 400;
+              line-height: 20px;
+            }
+          }
+
+          h2 {
+            @media screen and (max-width: 600px) {
+              font-weight: 400;
+              margin-bottom: 30px;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  #info {
+    margin-top: 1rem;
+    text-align: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    max-width: 100%;
+    border-radius: 0;
+    box-shadow: none;
+    padding: 15px;
+
+    form {
+      padding: 0;
+    }
+
+    .form-container {
+      padding: 15px;
+
+      @include flex(center, row, start);
+
+      input {
+        font-size: 12px;
+      }
+    }
+
+    .overlay-container {
+      .overlay {
+        .overlay-panel {
+          padding: 0 10px;
+
+
+
+          h1 {
+            font-size: 15px;
+            margin-bottom: 15px;
+
+
+          }
+
+          p {
+            font-size: 12px;
+
+          }
+
+          .ghost {
+            font-size: 12px;
+          }
+
+          @media screen and (max-width: 500px) {
+            button {
+              width: 90px;
+              @include flex(center, row, start);
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+
+.nav-logo {
+
+  img {
+    width: 150px;
+    margin: 0 20px;
+
+    @media screen and (max-width: 500px) {
+      width: 100px;
+    }
+  }
+}
+
+
+.sign-in-container {
+
+
+
+  h1 {
+    color: var(--dark-text);
+  }
+
+  .form-group {
+    height: 130px;
+  }
+
+  label {
+    display: block;
+    margin-bottom: 10px;
+    width: 7rem;
+  }
+
+
+  input[type="email"],
+  input[type="password"],
+  input[type="text"] {
+    width: 30.875rem;
+    height: 48px;
+    @include input-styles;
+  }
+
+  p {
+    color: red;
+    width: 10rem;
+    text-align: left;
+  }
+
+  h3 {
+    color: rgb(230, 79, 79);
+  }
+
+  input[type="text"]:focus,
+  input[type="email"]:focus,
+  input[type="password"]:focus,
+  input[type="number"]:focus,
+  textarea:focus {
+    background-color: var(--white);
+    border: 0.5px solid rgb(228, 228, 228);
+
+  }
+
+  button {
+    margin-top: 20px;
+  }
+
+
+
+  @include media-query(laptop) {
+    @include flex(center, column, center);
+
+    input[type="text"],
+    input[type="email"],
+    input[type="password"],
+    input[type="number"] {
+      width: 17.875rem;
+      height: 44px;
+      @include input-styles;
+
+    }
+  }
+
+  @media screen and (max-width: 1250px) {
+    @include flex(center, column, center);
+
+    input[type="text"],
+    input[type="email"],
+    input[type="password"],
+    input[type="number"] {
+      width: 20.875rem;
+      height: 40px;
+      @include input-styles;
+
+    }
+  }
+
+  @include media-query(tablet) {
+    @include flex(center, column, center);
+
+    input[type="text"],
+    input[type="email"],
+    input[type="password"],
+    input[type="number"] {
+      width: 12.875rem;
+      height: 44px;
+      @include input-styles;
+
+    }
+  }
+}

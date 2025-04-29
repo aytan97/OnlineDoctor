@@ -1,0 +1,156 @@
+.otp-container {
+    @include flex(center, null, center);
+    height: 100vh;
+    width: 100%;
+
+    img {
+        width: 40%;
+        max-height: 100vh;
+        object-fit: cover
+    }
+
+    .otp-row {
+        box-shadow: 0 0 30px rgba(24, 24, 24, 0.161);
+    }
+
+    .otp-modal {
+        @include flex(center, null, center);
+        width: 60%;
+        padding: 30px;
+        background-color: var(--white);
+
+        position: relative;
+
+        .cancel {
+
+            width: 30px;
+            height: 30px;
+            padding: 8px;
+            position: absolute;
+            right: 20px;
+            top: 20px;
+            z-index: 10;
+        }
+
+        .cancel:hover {
+            border-radius: 10px;
+            background-color: #f4f4f4;
+        }
+
+        .otp-form-container {
+
+            font-size: 16px;
+            font-family: 'Roboto', sans-serif;
+            margin-top: 30px;
+
+            h2 {
+                text-align: center;
+                word-wrap: break-word;
+
+                @include media-query(tablet) {
+                    font-size: 16px;
+                }
+
+                @include media-query(phone) {
+                    font-size: 13px;
+                }
+            }
+
+            label {
+                display: block;
+                margin: 20px 0 10px 20px;
+            }
+
+            input[type="text"],
+            input[type="email"],
+            input[type="password"],
+            input[type="number"] {
+                width: 30.875rem;
+                height: 48px;
+                @include input-styles;
+
+                @include media-query(laptop) {
+                    width: 20.875rem;
+                }
+
+                @include media-query(laptop) {
+                    width: 15.875rem;
+                }
+
+                @include media-query(phone) {
+                    width: 10.875rem;
+                }
+            }
+
+            p {
+                color: red;
+                width: 18rem;
+                margin: 5px 10px 0px 30px;
+
+                @include media-query(phone) {
+                    width: 12rem;
+                    font-size: 12px;
+                }
+            }
+
+            input[type="text"]:focus,
+            input[type="email"]:focus,
+            input[type="password"]:focus,
+            input[type="number"]:focus,
+            textarea:focus {
+                background-color: var(--white);
+                border: 0.5px solid rgb(228, 228, 228);
+
+            }
+
+            .form-lines {
+                @include flex(space-between, row, center);
+
+            }
+
+            .form-item {
+                height: 110px;
+                @include flex(center, column, center);
+
+                label {
+                    width: 30rem;
+
+                    @include media-query(desktop) {
+                        width: 30rem;
+                        font-size: 14px;
+                    }
+
+                    @include media-query(laptop) {
+                        width: 17rem;
+                        font-size: 14px;
+                    }
+
+
+                    @include media-query(phone) {
+                        width: 12rem;
+                        font-size: 12px;
+                    }
+                }
+            }
+
+
+        }
+
+    }
+
+}
+
+.otp-form-container>.form-lines {
+    margin-top: 20px
+}
+
+button {
+    margin-top: 20px;
+    @include reusable-button;
+    float: right;
+
+    @include media-query(phone) {
+        padding: 10px 35px;
+        font-size: 12px;
+    }
+}

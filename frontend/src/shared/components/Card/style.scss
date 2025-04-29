@@ -1,0 +1,14 @@
+.card_ {
+    @include flex(center, row, null);
+    position: relative;
+    background-color: var(--white);
+    padding-top: 15px;
+
+    .card-content {
+        @include flex(center, column, center);
+
+        img {
+            width: 70px;
+        }
+    }
+}

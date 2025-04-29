@@ -1,0 +1,107 @@
+.meeting-container {
+    margin: 0 auto;
+    height: 80vh;
+    @include flex(center, column, center);
+    gap: 40px;
+
+    h1 {
+        font-family: 'Roboto', sans-serif;
+        letter-spacing: 2px;
+        margin-top: 30px;
+
+        @media screen and (max-width:420px) {
+            font-size: 26px;
+        }
+    }
+
+    .meeting-preview {
+        border-radius: 7px;
+        width: 600px;
+        height: 300px;
+        background-color: rgba(27, 27, 27, 0.938);
+
+        @media screen and (max-width:620px) {
+            width: 400px;
+            height: 120px;
+        }
+
+        @media screen and (max-width:420px) {
+            width: 300px;
+            height: 120px;
+        }
+
+        .meeting-window {
+            border-top-left-radius: 7px;
+            border-top-right-radius: 7px;
+            width: 600px;
+            height: 300px;
+            background-color: rgba(27, 27, 27, 0.938);
+
+            @media screen and (max-width:620px) {
+                width: 400px;
+                height: 120px;
+            }
+
+            @media screen and (max-width:420px) {
+                width: 300px;
+                height: 120px;
+            }
+        }
+
+        .meeting-items {
+            border-bottom-left-radius: 7px;
+            border-bottom-right-radius: 7px;
+            width: 600px;
+            height: 60px;
+            background-color: rgb(28, 28, 28);
+            @include flex(center, row, center);
+
+            @media screen and (max-width:620px) {
+                width: 400px;
+                height: 80px;
+            }
+
+            @media screen and (max-width:420px) {
+                width: 300px;
+                height: 80px;
+            }
+
+            .items {
+                background-color: rgb(48, 48, 48);
+                width: 100px;
+                border-radius: 7px;
+                height: 40px;
+                @include flex(center, row, center);
+                gap: 20px;
+
+                span {
+                    i {
+                        color: white;
+                        cursor: pointer;
+                    }
+                }
+            }
+        }
+
+    }
+
+
+
+    button {
+        border-radius: 10px;
+        font-family: 'Roboto', sans-serif;
+        @include flex(center, row, center);
+        width: 300px;
+        height: 40px;
+        font-size: 22px;
+        letter-spacing: 4px;
+        text-transform: lowercase;
+
+        @media screen and (max-width:420px) {
+            width: 200px;
+            height: 35px;
+            font-size: 18px;
+
+        }
+    }
+}
