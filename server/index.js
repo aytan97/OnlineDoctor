@@ -14,7 +14,7 @@ app.use(bodyParser.urlencoded({ limit: '50mb', extended: true }))
 const io = new Server(server, {
   autoConnect: true,
   cors: {
-    origin: '*',
+    origin: 'https://online-doctor-two.vercel.app',
   },
 })
 
