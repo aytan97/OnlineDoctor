@@ -20,7 +20,7 @@ export interface TUser {
 }
 
 export interface AuthState {
-  list?: TUser[] | null;
+  list?: TUser | null;
   isLoggedIn: boolean;
   result: {
     status: "idle" | "loading" | "succeeded" | "failed";
