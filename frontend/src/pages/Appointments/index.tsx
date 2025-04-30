@@ -39,7 +39,7 @@ const Appointments = () => {
               <div className="appointments-list row d-flex align-item-center justify-center">
                 <div className="appointment-lists col-12 container d-flex align-item-center justify-center">
                   <div className="appointments-patient row d-flex  align-item-center justify-center">
-                    {users &&
+                    {Array.isArray(users) &&
                       users?.map((user) => {
                         if (
                           user.role === "doctor" &&
@@ -70,7 +70,7 @@ const Appointments = () => {
                                       ? category.categoryName
                                       : null;
                                   })
-                                  .filter((name) => name !== null) as string[]
+                                  .filter((name: string) => name !== null) as string[]
                               }
                               hospital={user?.currentWorkHospital}
                               doctorid={user?._id}
@@ -92,7 +92,7 @@ const Appointments = () => {
               <div className="appointments-list row d-flex align-item-center justify-center">
                 <div className="appointment-lists col-12 container d-flex align-item-center justify-center">
                   <div className="appointments-doctor row d-flex  align-item-center justify-center">
-                    {users &&
+                    {Array.isArray(users) &&
                       users?.map((user) => {
                         if (
                           user.role === "patient" &&

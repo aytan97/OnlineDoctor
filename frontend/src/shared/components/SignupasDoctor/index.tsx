@@ -22,7 +22,7 @@ const SignupasDoctor: React.FC<IToggle> = ({ role }) => {
     const [isDropdownOpen, setIsDropdownOpen] = useState<boolean>(false);
     const userEmails = users.map((user) => user.email);
     const userSsnID = users?.map((user) => user.ssnId);
-    const dropdownRef = useRef(null);
+    const dropdownRef = useRef<HTMLInputElement | null>(null);
 
     useEffect(() => {
         dispatch(fetchCategories());
@@ -30,7 +30,7 @@ const SignupasDoctor: React.FC<IToggle> = ({ role }) => {
     }, [dispatch]);
 
 
-    const { register, handleSubmit, formState: { errors }, reset, control, setError } = useForm<DoctorSignupFormValues>({
+    const { register, handleSubmit, formState: { errors }, reset, setError } = useForm<DoctorSignupFormValues>({
         resolver: yupResolver(signupAsDoctorSchema),
         defaultValues: { categories: [] }
     });
@@ -72,7 +72,7 @@ const SignupasDoctor: React.FC<IToggle> = ({ role }) => {
 
 
     const closeDropdown = (event: MouseEvent) => {
-        if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+        if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
             setIsDropdownOpen(false);
         }
     };

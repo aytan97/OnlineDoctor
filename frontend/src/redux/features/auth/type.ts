@@ -17,6 +17,8 @@ export interface TUser {
   status?: string;
   categories?: string[] | undefined;
   biography?: string;
+  avgRating: string | number;
+  totalRating: string | number;
 }
 
 export interface AuthState {

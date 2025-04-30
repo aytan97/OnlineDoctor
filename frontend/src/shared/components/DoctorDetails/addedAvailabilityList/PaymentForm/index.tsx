@@ -11,8 +11,8 @@ import logo2 from "../../../../media/images/logo2.png";
 import SuccessResult from "../SuccessPage";
 interface SlotDetailProps {
   selectedSlot: any;
-  doctorId: string;
-  patientId: string;
+  doctorId: string | undefined;
+  patientId: string | undefined;
 }
 
 const PaymentForm: React.FC<SlotDetailProps> = (props) => {

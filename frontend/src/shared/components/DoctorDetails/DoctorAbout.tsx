@@ -13,7 +13,7 @@ const DoctorAbout: React.FC<UserIdProp> = ({ id }) => {
     }
   }, [dispatch, id]);
 
-  const user = list?.find((user) => user._id === id); // ⬅️ Find the specific user by ID
+  const user = Array.isArray(list) && list?.find((user: any) => user._id === id); // ⬅️ Find the specific user by ID
 
   return (
     <div className="mb-5 about">

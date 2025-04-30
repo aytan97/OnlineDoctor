@@ -11,6 +11,7 @@ import "react-toastify/dist/ReactToastify.css";
 import { getMe } from "../../redux/features/auth/getMeSlice";
 import Search, { SearchProps } from "antd/es/input/Search";
 import Footer from "../../shared/layout/Footer";
+import { TUser } from "../../redux/features/auth/type";
 
 const TalkToDOctor = () => {
   const dispatch = useAppDispatch();
@@ -37,8 +38,8 @@ const TalkToDOctor = () => {
     }
   }, [dispatch, notificationShown]);
 
-  const filteredUsers = users?.filter?.(
-    (user) =>
+  const filteredUsers = Array.isArray(users) && users?.filter(
+    (user: TUser) =>
       user?.role === "doctor" &&
       user?.status === "Active" &&
       user?.image &&
@@ -77,7 +78,7 @@ const TalkToDOctor = () => {
               </div>
               <div className="doctor-lists col-12 container d-flex align-item-center justify-center">
                 <div className="doctors row d-flex  align-item-center justify-center">
-                  {filteredUsers?.map((user) => (
+                  {Array.isArray(filteredUsers) && filteredUsers?.map((user) => (
                     // <DoctorsCard
                     //   key={user?._id}
                     //   name={`${user?.firstname} ${user?.lastname}`}
@@ -120,12 +121,12 @@ const TalkToDOctor = () => {
                       photo={
                         user?.image?.data
                           ? `data:image/jpeg;base64,${btoa(
-                              user.image.data.reduce(
-                                (acc: string, byte: number) =>
-                                  acc + String.fromCharCode(byte),
-                                ""
-                              )
-                            )}`
+                            user.image.data.reduce(
+                              (acc: string, byte: number) =>
+                                acc + String.fromCharCode(byte),
+                              ""
+                            )
+                          )}`
                           : ""
                       }
                       scpeicialities={(user.categories ?? [])
@@ -137,7 +138,7 @@ const TalkToDOctor = () => {
                             ? category.categoryName.toLowerCase()
                             : null;
                         })
-                        .filter((name): name is string => name !== null)}
+                        .filter((name: string): name is string => name !== null)}
                       languageSkills={
                         Array.isArray(user?.languageSkills)
                           ? user.languageSkills

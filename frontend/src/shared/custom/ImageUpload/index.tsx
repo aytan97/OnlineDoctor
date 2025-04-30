@@ -19,7 +19,7 @@ const useImageUpload = () => {
     }, [storedImage, storedBlogImage]);
 
     const handleFileUpload = async (e: React.ChangeEvent<HTMLInputElement>) => {
-        const file = e.target.files[0];
+        const file = e.target.files?.[0];
         if (!file) return;
 
         const base64Image = await convertToBase64(file);

@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import facebook from '../../media/socialmedia/facebook-svgrepo-com.svg'
+// import facebook from '../../media/socialmedia/facebook-svgrepo-com.svg'
 const ContactDetails = () => {
     return (
         <div className="contacts row d-flex justify-space-between align-items-center">

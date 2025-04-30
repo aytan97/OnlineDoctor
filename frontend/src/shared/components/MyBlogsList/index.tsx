@@ -27,6 +27,7 @@ import LoadingSpinner from '../../layout/ReactSpinner'
 import { fetchCategories } from "../../../redux/features/categories/categorySlice";
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+// import { display } from "@mui/system";
 const List: React.FC = () => {
     const [open, setOpen] = useState({
         open: false,
@@ -72,9 +73,9 @@ const List: React.FC = () => {
         [dispatch]
     );
 
-    const handleChange = (value: string) => {
-        console.log(`selected ${value}`);
-    };
+    // const handleChange = (value: string) => {
+    //     console.log(`selected ${value}`);
+    // };
 
     const onNavigateToEditHandle = (id: string) =>
         navigate(`/writeBlog/${id}`);
@@ -121,6 +122,7 @@ const List: React.FC = () => {
                             trigger={["click"]}
                             dropdownRender={(menu) => (
                                 <div>
+                                    <div style={{ display: "none" }}>{menu}</div>
                                     <Menu>
                                         <Menu.Item
                                             key={`edit_${_}`}

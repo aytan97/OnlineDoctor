@@ -24,7 +24,7 @@ export const signupAsPatientSchema = yup.object().shape({
         ),
     confirmPassword: yup
         .string()
-        .oneOf([yup.ref('password'), null], 'Passwords must match')
+        .oneOf([yup.ref('password')], 'Passwords must match')
         .required('Confirm password is required'),
     role: yup.string().optional()
 });
@@ -45,7 +45,7 @@ export const signupAsDoctorSchema = yup.object().shape({
         ),
     confirmPassword: yup
         .string()
-        .oneOf([yup.ref('password'), null], 'Passwords must match')
+        .oneOf([yup.ref('password')], 'Passwords must match')
         .required('Confirm password is required'),
     role: yup.string().optional()
 });
@@ -76,9 +76,10 @@ export const blogSchema = yup.object({
     image: yup.string().optional(),
     img: yup.string().optional(),
     body: yup.string().required("Blog content is required"),
+    status: yup.string().required('Status is required'),
     tags: yup.array().of(
         yup.string().required('Enter a tag for easy search result')
-    )
+    ).optional(),
 });
 
 
@@ -86,7 +87,7 @@ export const myProfileSchema = yup.object({
     firstname: yup.string().required('First name is required'),
     lastname: yup.string().required('Last name is required'),
     categories: yup.array<Category>(),
-    languageSkills: yup.array().of(yup.string()).optional(),
+    languageSkills: yup.array().of(yup.string().required()).optional(),
     age: yup.number().optional().typeError('Age must be a number').positive('Age must be a positive number').integer('Age must be an integer').min(18, 'Age must be at least 18'),
     phoneNumber: yup.string().optional().matches(/^\+(?:[0-9] ?){6,14}[0-9]$/, 'Invalid phone number'),
     workExperience: yup.string().optional(),

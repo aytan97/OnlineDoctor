@@ -1,7 +1,7 @@
 import List from "./addedAvailabilityList";
 
 type DoctorAvailabilitiesProps = {
-  id: string;
+  id: string | undefined;
 };
 const DoctorAvailabilities: React.FC<DoctorAvailabilitiesProps> = ({ id }) => {
   return (

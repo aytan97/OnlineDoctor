@@ -1,7 +1,7 @@
 import { yupResolver } from '@hookform/resolvers/yup'
 import { useEffect, useRef, useState } from 'react'
 import { Controller, useForm } from 'react-hook-form'
-import ReactQuill, { Quill } from 'react-quill'
+import ReactQuill from 'react-quill'
 import 'react-quill/dist/quill.snow.css'
 import { blogSchema } from '../../../validation'
 import { useAppDispatch, useAppSelector } from '../../../redux/hooks'
@@ -28,9 +28,9 @@ const Editor = () => {
     const categories = useAppSelector((state) => state.categories.list)
     const blog = useAppSelector((state) => state.blog.selected)
     const blogs = useAppSelector((state) => state.blog.list)
-    const selectRef = useRef(null)
+    const selectRef = useRef<HTMLInputElement | null>(null);
     const [isDraft, setIsdraft] = useState('')
-    const { imageBase64, isFileUploaded, handleFileUpload, setImageBase64 } = useImageUpload();
+    const { imageBase64, handleFileUpload, setImageBase64 } = useImageUpload();
     const isUpdating = location.pathname === `/writeBlog/${id}`;
 
 
@@ -201,7 +201,7 @@ const Editor = () => {
                                     render={({ field }) => (
                                         <>
                                             <input
-                                                variant="filled"
+                                                // variant="filled"
                                                 {...field}
                                                 type="text"
                                                 placeholder="Enter Title"
@@ -221,7 +221,7 @@ const Editor = () => {
                                     render={({ field }) => (
                                         <>
                                             <input
-                                                variant="filled"
+                                                // variant="filled"
                                                 {...field}
                                                 type="text"
                                                 className="mr-5 "
@@ -251,7 +251,7 @@ const Editor = () => {
 
                                                 < input
                                                     {...field}
-                                                    variant="filled"
+                                                    // variant="filled"
                                                     type="file"
                                                     ref={selectRef}
                                                     placeholder="Choose image"

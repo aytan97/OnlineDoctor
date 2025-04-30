@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import { signupAsPatientSchema } from '../../../validation';
@@ -30,7 +30,7 @@ const SignupasPatient: React.FC<IToggle> = ({ role }) => {
         }
     }, [navigate, dispatch]);
 
-    const { register, handleSubmit, formState: { errors }, setError, reset } = useForm<FormValues>({
+    const { register, handleSubmit, formState: { errors }, setError } = useForm<FormValues>({
         resolver: yupResolver(signupAsPatientSchema),
     });
 

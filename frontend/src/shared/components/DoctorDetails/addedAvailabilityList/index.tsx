@@ -8,7 +8,7 @@ import CustomModal from "../../Modals";
 import PaymentForm from "./PaymentForm";
 
 type ListProps = {
-  id: string;
+  id: string | undefined;
 };
 const List: React.FC<ListProps> = ({ id }) => {
   const dispatch = useAppDispatch();

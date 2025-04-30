@@ -11,7 +11,7 @@ const Header: React.FC = () => {
   const dispatch = useAppDispatch();
   const location = useLocation();
   const dropdownRef = useRef<HTMLDivElement>(null);
-  const { result, isLoggedIn } = useAppSelector((state) => state.auth);
+  const { result } = useAppSelector((state) => state.auth);
   const user = useAppSelector((state) => state.getMe.user);
   const [isSmallScreen, setIsSmallScreen] = useState(window.innerWidth < 700);
   const [isUserHeaderModalOpen, setIsUserHeaderModalOpen] = useState(false);

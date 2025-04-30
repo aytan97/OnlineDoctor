@@ -1,7 +1,7 @@
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import { otpSchema } from '../../../validation';
-import { useAppDispatch, useAppSelector } from '../../../redux/hooks';
+import { useAppDispatch } from '../../../redux/hooks';
 import cancelclose from '../../media/images/cancel-close.svg';
 import { useNavigate } from 'react-router-dom';
 import React, { useEffect, useState } from 'react';
@@ -15,7 +15,7 @@ interface OTPFormValues {
     otp: string;
 }
 
-const OTPVerification: React.FC<IToggle> = ({ role }) => {
+const OTPVerification: React.FC<IToggle> = () => {
     const dispatch = useAppDispatch();
     const navigator = useNavigate()
     const [timeLeft, setTimeLeft] = useState(300);

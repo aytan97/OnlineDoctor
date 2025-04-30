@@ -122,25 +122,22 @@ const DoctorDetails = () => {
                   <div className="long-details">
                     <div className="mt-5 border pb-2">
                       <span
-                        className={`${
-                          tab === "about" && "border-b"
-                        } py-2 px-2 about-btn`}
+                        className={`${tab === "about" && "border-b"
+                          } py-2 px-2 about-btn`}
                         onClick={() => setTab("about")}
                       >
                         About
                       </span>
                       <span
-                        className={`${
-                          tab === "feedback" && "border-b"
-                        } py-2 px-2 feedback-btn `}
+                        className={`${tab === "feedback" && "border-b"
+                          } py-2 px-2 feedback-btn `}
                         onClick={() => setTab("feedback")}
                       >
                         Feedback
                       </span>
                       <span
-                        className={`${
-                          tab === "blogs" && "border-b"
-                        } py-2 px-2 feedback-btn `}
+                        className={`${tab === "blogs" && "border-b"
+                          } py-2 px-2 feedback-btn `}
                         onClick={() => setTab("blogs")}
                       >
                         Blogs

@@ -16,8 +16,7 @@ const WriteReceipt = () => {
     const {
         handleSubmit,
         reset,
-        control,
-        setError
+        control
     } = useForm()
 
     useEffect(() => {
@@ -51,20 +50,24 @@ const WriteReceipt = () => {
                                         render={({ field }) => (
                                             <Select
                                                 style={{ width: '300px', height: '40px' }}
-                                                className=""
                                                 placeholder="Select Patient"
-
-                                                options={list && Array.isArray(list) && list?.map((item) => {
-                                                    return item?.role === 'patient' ? {
-                                                        value: item?._id,
-                                                        label: `${item?.firstname} ${item?.lastname}`,
-                                                    } : null;
-                                                }).filter(option => option !== null)}
+                                                options={
+                                                    Array.isArray(list)
+                                                        ? list
+                                                            .filter((item) => item?.role === 'patient')
+                                                            .map((item) => ({
+                                                                value: item._id,
+                                                                label: `${item.firstname} ${item.lastname}`,
+                                                            }))
+                                                        : []
+                                                }
                                                 {...field}
                                                 onChange={(value) => {
                                                     handlePatientSelect(value);
+                                                    field.onChange(value); // Keep this to update react-hook-form field value
                                                 }}
                                             />
+
                                         )}
                                     />
                                 </div>

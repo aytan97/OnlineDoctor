@@ -36,8 +36,8 @@ const MyProfile = () => {
   const { imageBase64, handleFileUpload } = useImageUpload();
   const [storedImage, setStoredImage] = useState<string | null>(null);
   const { logoutAuth } = useAuth();
-  const selectRef = useRef(null);
-  const dropdownRef = useRef(null);
+  const selectRef = useRef<HTMLInputElement | null>(null);
+  const dropdownRef = useRef<HTMLInputElement | null>(null);
 
   const image = localStorage.getItem("profileImage");
   const updatedImage = localStorage.getItem("updatedProfileImage");
@@ -182,7 +182,7 @@ const MyProfile = () => {
   };
 
   const closeDropdown = (event: MouseEvent) => {
-    if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+    if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
       setIsDropdownOpen(false);
     }
   };
@@ -224,7 +224,7 @@ const MyProfile = () => {
                             Select photo
                             <input
                               {...field}
-                              variant="filled"
+                              // variant="filled"
                               type="file"
                               ref={selectRef}
                               placeholder="Choose image"
@@ -256,7 +256,7 @@ const MyProfile = () => {
                       <>
                         <input
                           {...field}
-                          variant="filled"
+                          // variant="filled"
                           type="text"
                           placeholder="First name"
                         />{" "}
@@ -276,7 +276,7 @@ const MyProfile = () => {
                       <>
                         <input
                           {...field}
-                          variant="filled"
+                          // variant="filled"
                           type="text"
                           placeholder="Last name"
                         />{" "}
@@ -299,7 +299,7 @@ const MyProfile = () => {
                       <>
                         <input
                           {...field}
-                          variant="filled"
+                          // variant="filled"
                           type="text"
                           placeholder="Phone number"
                         />{" "}
@@ -319,7 +319,7 @@ const MyProfile = () => {
                       <>
                         <input
                           {...field}
-                          variant="filled"
+                          // variant="filled"
                           type="number"
                           placeholder="Age"
                         />{" "}
@@ -383,9 +383,8 @@ const MyProfile = () => {
                             </div>
                           </div>
                           <div
-                            className={`dropdown-menu ${
-                              isDropdownOpen ? "show" : ""
-                            }`}
+                            className={`dropdown-menu ${isDropdownOpen ? "show" : ""
+                              }`}
                           >
                             <div
                               className="close-btn dropdown-toggle"
@@ -437,7 +436,7 @@ const MyProfile = () => {
                         <>
                           <input
                             {...field}
-                            variant="filled"
+                            // variant="filled"
                             type="text"
                             placeholder="Current work place"
                           />{" "}
@@ -462,7 +461,7 @@ const MyProfile = () => {
                         <>
                           <input
                             {...field}
-                            variant="filled"
+                            // variant="filled"
                             type="text"
                             placeholder="Work experience"
                           />{" "}
@@ -488,7 +487,7 @@ const MyProfile = () => {
                       <>
                         <textarea
                           {...field}
-                          variant="filled"
+                          // variant="filled"
                           className="bio"
                           placeholder="Introduce yourself to patients..."
                         />{" "}

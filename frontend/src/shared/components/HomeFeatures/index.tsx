@@ -1,4 +1,3 @@
-import React from 'react'
 import CardComponents from '../Card'
 import receiptdoc from '../../media/images/receiptdoc.svg'
 import support from '../../media/images/support.svg'

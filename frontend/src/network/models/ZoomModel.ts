@@ -4,8 +4,8 @@ interface ZoomModel extends IBaseEntity {
     topic?: string;
     roleType?: string;
     signature?: string;
-    doctorId: string;
-    patientId: string;
+    doctorId: string | undefined;
+    patientId: string | undefined;
     date: Date;
     time: string;
 }

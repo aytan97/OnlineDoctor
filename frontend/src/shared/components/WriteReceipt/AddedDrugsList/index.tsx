@@ -3,7 +3,7 @@ import { Row, Table, Col, Button, Dropdown, Menu, Popconfirm } from "antd";
 import { SettingOutlined, DeleteOutlined } from "@ant-design/icons";
 import Card from "antd/es/card/Card";
 import { useAppDispatch } from "../../../../redux/hooks";
-import { SlotType } from "../../../../redux/features/blogs/type";
+// import { SlotType } from "../../../../redux/features/blogs/type";
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 const AddedDrugsList: React.FC = () => {
@@ -47,11 +47,12 @@ const AddedDrugsList: React.FC = () => {
     ];
 
     const dispatch = useAppDispatch();
-    const [loading, setLoading] = useState(false);
+    const [loading] = useState(false);
 
     const onDeleteHandle = useCallback(
         (id: string) => {
             // dispatch(deleteBlog(key));
+            console.log(id)
             toast.success('Removed successfully!', {
                 autoClose: 3000,
                 position: "top-right",
@@ -101,6 +102,7 @@ const AddedDrugsList: React.FC = () => {
                     trigger={["click"]}
                     dropdownRender={(menu) => (
                         <Menu>
+                            <div style={{ display: "none" }}>{menu}</div>
                             <Menu.Item
                                 key={`delete_${_}`}
                                 icon={<DeleteOutlined />}

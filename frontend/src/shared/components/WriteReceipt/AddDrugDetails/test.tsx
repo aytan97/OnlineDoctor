@@ -1,6 +1,6 @@
-import { useEffect, useRef, useState } from 'react'
+import { useEffect, useState } from 'react'
 import { Controller, useForm } from 'react-hook-form'
-import { Button, Divider, Input, InputRef, Select, Space } from 'antd'
+import { Button, Divider, Input, Select } from 'antd'
 import { MinusOutlined, PlusOutlined, PlusCircleOutlined } from '@ant-design/icons';
 import { Helmet } from 'react-helmet-async'
 import logoicon from '../../../media/images/logoicon.png'
@@ -33,17 +33,21 @@ interface Drug {
     toBeTakenItems?: string[];
 }
 
-const AddReceipt = ({ onSubmit, patientId }) => {
+interface AddReceiptProps {
+    onSubmit: (data: any) => void; // adjust `any` to the actual form data type if you know it
+    patientId: string;
+}
+
+const AddReceipt: React.FC<AddReceiptProps> = ({ onSubmit, patientId }) => {
     const dispatch = useAppDispatch()
     const getme = useAppSelector((state) => state.getMe.user)
     const [drugs, setDrugs] = useState<Drug[]>([{}]);
-    const inputRef = useRef<InputRef>(null);
+    // const inputRef = useRef<InputRef>(null);
     const [isDirty, setIsDirty] = useState<boolean>(false);
     const {
         formState: { errors },
         control,
         setError,
-        reset,
         clearErrors,
     } = useForm();
 
@@ -180,7 +184,9 @@ const AddReceipt = ({ onSubmit, patientId }) => {
                 {drugs.map((drug, index) => (
                     <div key={index} className="form-items">
                         <Divider />
-                        {errors.drugdetails && <p className="error mt-1">{errors.drugdetails.message}</p>}
+                        {errors.drugdetails?.message && (
+                            <p className="error mt-1">{String(errors.drugdetails.message)}</p>
+                        )}
                         <div className="form-item ml-2 drug-tags">
                             <Controller
                                 control={control}

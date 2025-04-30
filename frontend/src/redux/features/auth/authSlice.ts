@@ -5,7 +5,7 @@ import createBaseSlice from "../../../network/reducers/core/BaseSlice";
 import { UserService } from "../../../network/services/UserService";
 
 const initialState: AuthState = {
-  list: [],
+  list: null,
   isLoggedIn: false,
   result: {
     status: "idle",
@@ -104,9 +104,13 @@ const authSlice = createBaseSlice<AuthState>("auth", initialState, [
   {
     thunk: deleteUser,
     onFulfilled: (state, action) => {
-      state.list = (state.list || [])?.filter(
-        (user: { _id: string }) => user._id !== action.payload
-      );
+      // state.list = (state.list || [])?.filter(
+      //   (user: { _id: string }) => user._id !== action.payload
+      // );
+      if (state.list && state.list._id === action.payload) {
+        state.list = null;
+        state.isLoggedIn = false;
+      }
     },
   },
 ]);
