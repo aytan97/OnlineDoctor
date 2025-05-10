@@ -21,11 +21,13 @@ const tokenOptions = {
 }
 
 const imagePath = path.join(__dirname, '../public/avatar.png')
-const imageBuffer = fs.readFileSync(imagePath)
+const imageBuffer = fs?.readFileSync(imagePath)
 
 const base64ImageDefault = imageBuffer.toString('base64')
 
-const defaultImageBase64 = `data:image/jpeg;base64,${base64ImageDefault}`
+// const defaultImageBase64 = `data:image/jpeg;base64,${base64ImageDefault}`
+const defaultImageBase64 = 'https://online-doctorapi.vercel.app/avatar.png'
+
 router.post('/', userValidationRules(), validateUser, async (req, res) => {
   try {
     const {
