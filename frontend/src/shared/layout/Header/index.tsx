@@ -151,7 +151,7 @@ const Header: React.FC = () => {
               </div>
             )}
 
-            {result?.token ? (
+            {result?.token && user ? (
               <div className="App">
                 <div className="content">
                   <div

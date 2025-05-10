@@ -57,7 +57,6 @@ const HeaderUser: React.FC<HeaderUserProps> = ({ onClose }) => {
           to="/myProfile"
           onClick={onClose}
         >
-          {" "}
           My Profile
         </Link>
         <Link
