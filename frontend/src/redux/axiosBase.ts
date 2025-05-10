@@ -1,14 +1,15 @@
 import axios from "axios";
 import qs from "qs";
+import AppConsts from "../shared/constants/appconsts";
 import {
-    requestErrorInterceptor,
     requestInterceptor,
-    responseErrorInterceptor,
+    requestErrorInterceptor,
     responseInterceptor,
+    responseErrorInterceptor,
 } from "./../redux/intercepters";
 
 const http = axios.create({
-    baseURL: "https://online-doctorapi.vercel.app/",
+    baseURL: AppConsts.remoteServiceBaseUrl,
     headers: {
         "Content-Type": "application/json",
     },
