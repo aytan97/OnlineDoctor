@@ -14,9 +14,7 @@ const allowedOrigin = 'https://online-doctor-two.vercel.app'
 
 app.use(
   cors({
-    origin: allowedOrigin,
-    methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH'],
-    credentials: true,
+    origin: '*',
   })
 )
 
