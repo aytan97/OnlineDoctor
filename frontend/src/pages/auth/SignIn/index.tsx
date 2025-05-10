@@ -60,11 +60,11 @@ const SignIn = () => {
 
     if (
       result &&
-      result.token &&
-      result.status === "succeeded" &&
+      result?.token &&
+      result?.status === "succeeded" &&
       isAnyUserActive
     ) {
-      localStorage.setItem("token", result.token);
+      localStorage.setItem("token", result?.token);
       navigate("/");
     } else {
       localStorage.setItem("token", "");
