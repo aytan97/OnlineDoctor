@@ -27,10 +27,10 @@ const HeaderUser: React.FC<HeaderUserProps> = ({ onClose }) => {
     }
   }, []);
 
-  console.log(result);
   const handleLogout = () => {
     navigate("/login");
     logoutAuth();
+    console.log('logged out')
     location.reload();
   };
 

@@ -23,17 +23,27 @@ const socketIdToEmailMap = new Map()
 app.use(express.json())
 app.use(cors())
 mongoose
+// .connect(process.env.DATABASE_SERVER_URL, {
+//   useNewUrlParser: true,
+//   useUnifiedTopology: true,
+// })
+// .then(() => {
+//   console.log('Connected to the database!')
+// })
+// .catch((err) => {
+//   console.log('Connection failed!', err)
+//   console.log('Hello, World!')
+// })
+
+mongoose
   .connect(process.env.DATABASE_SERVER_URL, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
+    serverSelectionTimeoutMS: 10000, // Helps reduce cold-start timeout errors
+    ssl: true,
+    tlsAllowInvalidCertificates: false,
+    tlsAllowInvalidHostnames: false,
   })
-  .then(() => {
-    console.log('Connected to the database!')
-  })
-  .catch((err) => {
-    console.log('Connection failed!', err)
-    console.log('Hello, World!')
-  })
+  .then(() => console.log('Connected to MongoDB'))
+  .catch((err) => console.error('Connection failed!', err))
 
 const authRouter = require('./routes/auth')
 const roleRouter = require('./routes/roles')
