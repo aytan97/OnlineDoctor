@@ -20,7 +20,7 @@ const tokenOptions = {
   expiresIn: '1d',
 }
 
-const imagePath = '../public/avatar.png'
+const imagePath = path.join(__dirname, '../public/avatar.png')
 const imageBuffer = fs.readFileSync(imagePath)
 
 const base64ImageDefault = imageBuffer.toString('base64')
