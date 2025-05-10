@@ -1,3 +1,4 @@
+const path = require('path')
 const express = require('express')
 const bcrypt = require('bcryptjs')
 const jwt = require('jsonwebtoken')
@@ -9,18 +10,17 @@ const userValidationRules = require('../validations/userValidation')
 const validateUser = require('../middleware/validateUser')
 const getUser = require('../middleware/getUser')
 const { default: mongoose } = require('mongoose')
-const fs = require('fs')
 require('dotenv').config()
 const MailTemplate = require('../templates/mailTemplate')
 const sendMail = require('../services/mailService')
-
+const fs = require('fs')
 const ObjectId = mongoose.Types.ObjectId
 const pendingUsers = {}
 const tokenOptions = {
   expiresIn: '1d',
 }
 
-const imagePath = './routes/avatar.png'
+const imagePath = '../public/avatar.png'
 const imageBuffer = fs.readFileSync(imagePath)
 
 const base64ImageDefault = imageBuffer.toString('base64')
