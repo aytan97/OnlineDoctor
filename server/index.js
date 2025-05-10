@@ -5,7 +5,7 @@ const cors = require('cors')
 const { Server } = require('socket.io')
 const http = require('http')
 const bodyParser = require('body-parser')
-const favicon = require('serve-favicon')
+// const favicon = require('serve-favicon')
 require('dotenv').config()
 const app = express()
 const server = http.createServer(app)
@@ -13,9 +13,9 @@ const server = http.createServer(app)
 app.use(bodyParser.json({ limit: '50mb' }))
 app.use(bodyParser.urlencoded({ limit: '50mb', extended: true }))
 // app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')))
-app.get('/favicon.ico', (req, res) => {
-  res.status(204).end() // or serve actual file
-})
+// app.get('/favicon.ico', (req, res) => {
+//   res.status(204).end() // or serve actual file
+// })
 const io = new Server(server, {
   autoConnect: true,
   cors: {
