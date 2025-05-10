@@ -55,11 +55,11 @@ app.use('/blog', blogRouter)
 const PORT = process.env.PORT || 5001
 app.listen(PORT, () => console.log(`server running on port ${PORT}`))
 
-app.use((err, req, res, next) => {
-  console.error('Unhandled error:', err.stack || err)
-  res.status(500).json({
-    success: false,
-    message: 'Internal Server Error',
-    error: err.message,
-  })
-})
+// app.use((err, req, res, next) => {
+//   console.error('Unhandled error:', err.stack || err)
+//   res.status(500).json({
+//     success: false,
+//     message: 'Internal Server Error',
+//     error: err.message,
+//   })
+// })
