@@ -20,12 +20,24 @@ const tokenOptions = {
   expiresIn: '1d',
 }
 
-const imagePath = './public/avatar.png'
-const imageBuffer = fs.readFileSync(imagePath)
+// const imagePath = './public/avatar.png'
+// const imageBuffer = fs.readFileSync(imagePath)
 
-const base64ImageDefault = imageBuffer.toString('base64')
+// const base64ImageDefault = imageBuffer.toString('base64')
 
-const defaultImageBase64 = `data:image/jpeg;base64,${base64ImageDefault}`
+let defaultImageBase64 = ''
+try {
+  const imagePath = path.join(__dirname, '../public/avatar.png')
+  const imageBuffer = fs.readFileSync(imagePath)
+  defaultImageBase64 = `data:image/jpeg;base64,${imageBuffer.toString(
+    'base64'
+  )}`
+} catch (err) {
+  console.error('Could not read avatar image:', err.message)
+  defaultImageBase64 = '' // fallback or skip if needed
+}
+
+// const defaultImageBase64 = `data:image/jpeg;base64,${base64ImageDefault}`
 router.post('/', userValidationRules(), validateUser, async (req, res) => {
   try {
     const {

@@ -10,9 +10,13 @@ const app = express()
 app.use(bodyParser.json({ limit: '50mb' }))
 app.use(bodyParser.urlencoded({ limit: '50mb', extended: true }))
 
+const allowedOrigin = 'https://online-doctor-two.vercel.app'
+
 app.use(
   cors({
-    origin: 'https://online-doctor-two.vercel.app',
+    origin: allowedOrigin,
+    methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH'],
+    credentials: true,
   })
 )
 
@@ -52,3 +56,12 @@ app.use('/blog', blogRouter)
 
 const PORT = process.env.PORT || 5001
 app.listen(PORT, () => console.log(`server running on port ${PORT}`))
+
+app.use((err, req, res, next) => {
+  console.error('Unhandled error:', err.stack || err)
+  res.status(500).json({
+    success: false,
+    message: 'Internal Server Error',
+    error: err.message,
+  })
+})
