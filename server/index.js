@@ -3,7 +3,6 @@ const fs = require('fs')
 const express = require('express')
 const { default: mongoose } = require('mongoose')
 const cors = require('cors')
-const http = require('http')
 const bodyParser = require('body-parser')
 require('dotenv').config()
 const app = express()
@@ -13,27 +12,11 @@ app.use(bodyParser.urlencoded({ limit: '50mb', extended: true }))
 
 app.use(
   cors({
-    origin: '*',
+    origin: 'https://online-doctor-two.vercel.app',
   })
 )
 
-const emailToSocketIdMap = new Map()
-const socketIdToEmailMap = new Map()
-
 app.use(express.json())
-app.use(cors())
-mongoose
-// .connect(process.env.DATABASE_SERVER_URL, {
-//   useNewUrlParser: true,
-//   useUnifiedTopology: true,
-// })
-// .then(() => {
-//   console.log('Connected to the database!')
-// })
-// .catch((err) => {
-//   console.log('Connection failed!', err)
-//   console.log('Hello, World!')
-// })
 
 mongoose
   .connect(process.env.DATABASE_SERVER_URL, {
